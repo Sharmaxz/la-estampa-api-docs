@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>La Estampa API &mdash; La Estampa 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authenticating Requests" href="endpoints-dev.html" />
+    <link rel="prev" title="Welcome to La Estampa API’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> La Estampa
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">La Estampa API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run">Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#endpoints">EndPoints</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html">Authenticating Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#category">Category</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#collection">Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#print">Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#report">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#generate-presigned-post-for-aws-s3-bucket">Generate Presigned Post for AWS S3 Bucket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints-dev.html#social-login-endpoints">Social Login Endpoints</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">La Estampa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>La Estampa API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/la-estampa.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="la-estampa-api">
+<h1>La Estampa API<a class="headerlink" href="#la-estampa-api" title="Permalink to this headline">¶</a></h1>
+<p>Project develop in Python 3.7, Django 2.2.6 and Django Rest Framework 3.10.3 to provide REST API for La Estampa Website.</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.python.org/">Python</a> (3.7, 3.8)</p></li>
+<li><p><a class="reference external" href="https://www.djangoproject.com/">Django</a> (2.2.6, 2.2.7)</p></li>
+<li><p><a class="reference external" href="https://www.django-rest-framework.org/">Django Rest Framework</a> (3.10.3)</p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>We strongly recommended to use virtualenv, but if you are not familiar with virtualenv, you can read more in ‘’<a class="reference external" href="https://virtualenv.pypa.io/en/latest/">https://virtualenv.pypa.io/en/latest/</a>’’</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>We have to create a .env file in project root folder with this informations.
+If you don’t have access to theses keys contact the development team.</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ALLOWED_HOSTS</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">DATABASE_URL</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="nv">DEBUG</span><span class="o">=</span>
+<span class="nv">SECRET_KEY</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run">
+<h2>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python manage.py runserver
+</pre></div>
+</div>
+</div>
+<div class="section" id="endpoints">
+<h2>EndPoints<a class="headerlink" href="#endpoints" title="Permalink to this headline">¶</a></h2>
+<p>Our architecture follow Representational State Transfer (REST) architectural style for for distributed hypermedia systems (API’s).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html">Authenticating Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#category">Category</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#get">GET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#collection">Collection</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#id1">GET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#id2">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#print">Print</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#id3">GET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#id4">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#report">Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#generate-presigned-post-for-aws-s3-bucket">Generate Presigned Post for AWS S3 Bucket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="endpoints-dev.html#social-login-endpoints">Social Login Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#convert-token">Convert Token</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints-dev.html#invalidate-sessions">Invalidate Sessions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="endpoints-dev.html" class="btn btn-neutral float-right" title="Authenticating Requests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to La Estampa API’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, hub9
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

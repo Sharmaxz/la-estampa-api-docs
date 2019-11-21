@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Authenticating Requests &mdash; La Estampa 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="La Estampa API" href="la-estampa.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> La Estampa
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="la-estampa.html">La Estampa API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="la-estampa.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="la-estampa.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="la-estampa.html#environment-variables">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="la-estampa.html#run">Run</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="la-estampa.html#endpoints">EndPoints</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Authenticating Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#category">Category</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#get">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#post">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection">Collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#print">Print</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">POST</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#report">Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-presigned-post-for-aws-s3-bucket">Generate Presigned Post for AWS S3 Bucket</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#social-login-endpoints">Social Login Endpoints</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#convert-token">Convert Token</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#invalidate-sessions">Invalidate Sessions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">La Estampa</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="la-estampa.html">La Estampa API</a> &raquo;</li>
+        
+      <li>Authenticating Requests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/endpoints-dev.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="authenticating-requests">
+<h1>Authenticating Requests<a class="headerlink" href="#authenticating-requests" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>Print</cite> endpoints requires authentication.</p>
+<p>PLEASE WRITE ME</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="category">
+<h1>Category<a class="headerlink" href="#category" title="Permalink to this headline">¶</a></h1>
+<p>The category is a way to filter and sort the`Tag`.</p>
+<div class="section" id="get">
+<h2>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/category/
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post">
+<h2>POST<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/category/
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="collection">
+<h1>Collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>GET<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>POST<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="print">
+<h1>Print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>GET<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/mywork/
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>POST<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/mywork/
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id5">
+<caption><span class="caption-text"><strong>POST</strong></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>field</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>code</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>exclusivity</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>date_creation</p></td>
+<td><p>datetime</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>date_update</p></td>
+<td><p>datetime</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>image</p></td>
+<td></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>psd_original</p></td>
+<td></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>psd_final</p></td>
+<td></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>psd_flirted</p></td>
+<td></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>briefing</p></td>
+<td><p>Briefing</p></td>
+<td><p>false</p></td>
+</tr>
+</tbody>
+</table>
+<p>Filter user posts by category</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;https://viunge.herokuapp.com/v1/post/(?category=[0-9]+)&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="report">
+<h1>Report<a class="headerlink" href="#report" title="Permalink to this headline">¶</a></h1>
+<p>Report a video post as Inappropriate Content or Offensive Material for staff review</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;https://viunge.herokuapp.com/v1/report/&#39;</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id6">
+<caption><span class="caption-text"><strong>POST</strong></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>field</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>reviewed</p></td>
+<td><p>INC (Inappropriate Content or Offensive Material) or SAF (Considered Safe)</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>video_id</p></td>
+<td><p>integer</p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="generate-presigned-post-for-aws-s3-bucket">
+<h1>Generate Presigned Post for AWS S3 Bucket<a class="headerlink" href="#generate-presigned-post-for-aws-s3-bucket" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;https://viunge.herokuapp.com/v1/generate_presigned_url/(?file_name=[a-z0-9]+)&#39;</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;post&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;url&quot;</span>: <span class="s2">&quot;https://s3-eu-west-1.amazonaws.com/viunge-be-videos-in&quot;</span>,
+        <span class="s2">&quot;fields&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;key&quot;</span>: <span class="s2">&quot;file_name.mov&quot;</span>,
+            <span class="s2">&quot;x-amz-algorithm&quot;</span>: <span class="s2">&quot;AWS4-HMAC-SHA256&quot;</span>,
+            <span class="s2">&quot;x-amz-credential&quot;</span>: <span class="s2">&quot;&quot;</span>,
+            <span class="s2">&quot;x-amz-date&quot;</span>: <span class="s2">&quot;&quot;</span>,
+            <span class="s2">&quot;policy&quot;</span>: <span class="s2">&quot;&quot;</span>,
+            <span class="s2">&quot;x-amz-signature&quot;</span>: <span class="s2">&quot;&quot;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="social-login-endpoints">
+<h1>Social Login Endpoints<a class="headerlink" href="#social-login-endpoints" title="Permalink to this headline">¶</a></h1>
+<p>These endpoints provides account creation, and access token creation.</p>
+<div class="section" id="convert-token">
+<h2>Convert Token<a class="headerlink" href="#convert-token" title="Permalink to this headline">¶</a></h2>
+<p>Use this endpoint to convert a token from Facebook or Instagram
+to an access token for a ViUnge user.
+This access token is then used to authenticate the user on the other
+endpoints.</p>
+<p>If the user is not registered on ViUnge, an account is created for him.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>POST <span class="s1">&#39;https://viunge.herokuapp.com/v1/auth/convert-token/&#39;</span>
+
+<span class="o">{</span>
+  client_id: &lt;client_id&gt;,
+  client_secret: &lt;client_secret&gt;,
+  grant_type: convert_token,
+  backend: &lt;provider&gt;,
+  token: &lt;social_token&gt;
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><cite>cliend_id</cite> and <cite>client_secret</cite> are the credentials of the client application.
+This is provided by the backend.</p>
+<p><cite>provider</cite> can be ‘facebook’ or ‘instagram’.</p>
+<p><cite>token</cite> is the access token returned by the facebook or instagram social login sdk.</p>
+<p>Response:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    access_token: &lt;hash_string&gt;,
+    expires_in: <span class="m">36000</span>,
+    token_type: <span class="s2">&quot;Bearer&quot;</span>,
+    score: <span class="s2">&quot;read write&quot;</span>,
+    refresh_token: &lt;hash_string&gt;,
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="invalidate-sessions">
+<h2>Invalidate Sessions<a class="headerlink" href="#invalidate-sessions" title="Permalink to this headline">¶</a></h2>
+<p>Use this endpoint to invalidate all sessions of an user.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>POST <span class="s1">&#39;https://viunge.herokuapp.com/v1/auth/invalidate-sessions/&#39;</span>
+Authorization: Bearer &lt;token&gt;
+
+<span class="o">{</span>
+  client_id: &lt;client_id&gt;
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The response is an empty json object, with HTTP status code 204.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="la-estampa.html" class="btn btn-neutral float-left" title="La Estampa API" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, hub9
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
