@@ -49,6 +49,6 @@ EndPoints
 Our architecture follow Representational State Transfer (REST) architectural style for for distributed hypermedia systems (API's).
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    endpoints-dev

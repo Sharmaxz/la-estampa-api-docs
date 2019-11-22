@@ -11,45 +11,222 @@ PLEASE WRITE ME
 Category
 ------------------------
 
-The category is a way to filter and sort the`Tag`.
+The category is a way to filter and sort the `Tag`_.
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+   * - id
+     - integer
+     - false
+   * - name
+     - string
+     - true
+
+
 
 GET
 ===
+
+If you want to get all category, use:
 
 .. code-block:: bash
 
     https://la-estampa.herokuapp.com/api/category/
 
-Response:
+**Response:**
 
 .. code-block:: bash
 
+    [
+        {
+            "id": 1,
+            "name": "category 1"
+        },
+        {
+            "id": 2,
+            "name": "category 2"
+        }
+        ...
+    ]
+
+But if you prefer to take one category. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/category/<id>
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "category"
+    }
 
 
 POST
 ====
 
+You need to do post request with the category name in the body to create a new category.
+
 .. code-block:: bash
 
     https://la-estampa.herokuapp.com/api/category/
 
+body:
+
+.. code-block:: bash
+
+    {
+        "name" : "category"
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "category"
+    }
+
+PUT
+===
+
+Choose the category that you want to update and replace the <id> to category ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/category/<id>
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name" : "category"
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "category"
+    }
+
+P.S: The response will contains the new values.
+
+PATCH
+=====
+
+Choose the category that you want to partial update and replace the <id> to category ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/category/<id>
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name" : "category"
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "name": "category"
+        }
+    ]
+
+P.S: The response will contains the new values.
 
 ------------------------
 
 Collection
 ------------------------
 
+The collection is a `Print`_ group, with the name suggests is a `Print`_ collection.
+
+
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+
+   * - id
+     - integer
+     - false
+
+   * - date_creation
+     - datetime
+     - true
+
+   * - date_update
+     - datetime
+     - false
+
+   * - briefing
+     - string
+     - false
+
+
+   * - ps
+     - string
+     - false
 
 GET
 ===
 
+If you want to get all collection, use:
+
 .. code-block:: bash
 
+    https://la-estampa.herokuapp.com/api/collection/
 
 POST
 ====
 
+You need to do post request with the collection attributes in the body to create a new collection.
+
 .. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/collection/
+
+body:
+
+.. code-block:: bash
+
+    {
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+    }
 
 
 
@@ -130,6 +307,14 @@ Filter user posts by category
 .. code-block:: bash
 
     'https://viunge.herokuapp.com/v1/post/(?category=[0-9]+)'
+
+
+
+Tag
+------------------------
+
+
+------------------------
 
 Report
 ------------------------
