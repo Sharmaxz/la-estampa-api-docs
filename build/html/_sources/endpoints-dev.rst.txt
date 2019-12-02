@@ -181,7 +181,7 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - datetime
      - false
 
-   * - date_update
+   * - date_update *
      - datetime
      - false
 
@@ -193,7 +193,7 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - string
      - false
 
-P.S.: The date_creation is not required because the value default is the current time.
+P.S.: The date_creation and date_update is not required because the value default is the current time.
 
 GET
 ===
@@ -221,7 +221,7 @@ If you want to get all collection, use:
             "id": 2,
             "name": "inverno 2019",
             "date_creation": "2018-12-21",
-            "date_update": 2019-04-01T15:12:53.453569Z",
+            "date_update": "2019-04-01T15:12:53.453569Z",
             "briefing": "The second best briefing ever",
             "ps": ""
         }

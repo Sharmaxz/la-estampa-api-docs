@@ -181,7 +181,7 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - datetime
      - false
 
-   * - date_update
+   * - date_update *
      - datetime
      - false
 
@@ -193,7 +193,7 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - string
      - false
 
-P.S.: The date_creation is not required because the value default is the current time.
+P.S.: The date_creation and date_update is not required because the value default is the current time.
 
 GET
 ===
