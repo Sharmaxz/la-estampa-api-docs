@@ -221,7 +221,7 @@ If you want to get all collection, use:
             "id": 2,
             "name": "inverno 2019",
             "date_creation": "2018-12-21",
-            "date_update": 2019-04-01T15:12:53.453569Z",
+            "date_update": "2019-04-01T15:12:53.453569Z",
             "briefing": "The second best briefing ever",
             "ps": ""
         }
