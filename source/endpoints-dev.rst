@@ -8,6 +8,10 @@ PLEASE WRITE ME
 
 ------------------------
 
+Briefing
+------------------------
+
+
 Category
 ------------------------
 
@@ -294,9 +298,7 @@ body:
 .. code-block:: bash
 
     {
-        "id": 1,
         "name": "verão 2019",
-        "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
         "briefing": "The best briefing ever",
         "ps": ""
@@ -331,9 +333,7 @@ body:
 .. code-block:: bash
 
     {
-        "id": 145,
         "name": "verão 2020",
-        "date_creation": "2019-11-21T19:43:21.862687Z",
         "date_update": "2019-12-20T20:51:50.843449Z",
         "briefing": "Now this the best briefing ever",
         "ps": ""
@@ -572,9 +572,9 @@ The feedback is a print commentary that will have the behavior of a chat on the 
      - User
      - true
 
-   * - date
+   * - date *
      - datetime
-     - true
+     - false
 
    * - text
      - string
@@ -601,94 +601,181 @@ The
 
     [
         {
-
+            "id": 1,
+            "date": "2019-12-03T14:24:46.605379Z",
+            "text": "Could you change the red? Maybe blue.",
+            "data": {},
+            "print": 1,
+            "sender": 1
         },
         {
-
+            "id": 2,
+            "date": "2019-12-03T14:30:03.502329Z",
+            "text": "Yes, I could, but I wouldn't really want to change to blue, I prefer yellow in this case.",
+            "data": {},
+            "print": 1,
+            "sender": 2
         }
         ...
     ]
 
-But if you prefer to take one category. Replace the <id> for the value that you want.
 
-
-
-
-Print
-------------------------
-
-
-GET
-===
+And you can order the feedback by **ascending** and **descending** with the query "order".
 
 .. code-block:: bash
 
-    https://la-estampa.herokuapp.com/api/mywork/
+    https://la-estampa.herokuapp.com/api/feedback/?order=descending
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 24,
+            "date": "2019-13-03T13:03:30.601202Z",
+            "text": "Yes, I knew it. I warned you",
+            "data": {},
+            "print": 1,
+            "sender": 1
+        },
+        {
+            "id": 23,
+            "date": "2019-13-03T12:46:24.502605Z",
+            "text": "The yellow really was bad.",
+            "data": {},
+            "print": 1,
+            "sender": 2
+        }
+        ...
+    ]
+
+
+But if you prefer to take one feedback. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/feedback/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "date": "2019-12-03T14:24:46.605379Z",
+        "text": "Could you change the red? Maybe blue.",
+        "data": {},
+        "print": 1,
+        "sender": 1
+    }
+
 
 POST
 ====
 
+You need to do post request with the feedback attributes in the body to create a new collection.
+
 .. code-block:: bash
 
-    https://la-estampa.herokuapp.com/api/mywork/
+    https://la-estampa.herokuapp.com/api/feedback/
 
-.. list-table:: **POST**
-   :widths: 20 15 15
-   :header-rows: 1
+body:
 
-   * - field
-     - type
-     - required
+.. code-block:: bash
 
-   * - id
-     - integer
-     - false
+    {
+        "text": "Ok, I will change to blue.",
+        "data": {},
+        "print": 1,
+        "sender": 2
+    }
 
-   * - code
-     - string
-     - true
 
-   * - exclusivity
-     - string
-     - true
+**Response:**
 
-   * - status
-     - string
-     - false
+.. code-block:: bash
 
-   * - type
-     - string
-     - false
+    {
+        "id": 25,
+        "date": "2019-13-03T13:05:30.601202Z",
+        "text": "Ok, I will change to blue.",
+        "data": {},
+        "print": 1,
+        "sender": 2
+    }
 
-   * - date_creation
-     - datetime
-     - true
 
-   * - date_update
-     - datetime
-     - false
+PUT
+===
 
-   * - image
-     -
-     - true
+Choose the feedback that you want to update and replace the <id> to feedback ID and add all the attributes in the body.
 
-   * - psd_original
-     -
-     - true
+.. code-block:: bash
 
-   * - psd_final
-     -
-     - false
+    https://la-estampa.herokuapp.com/api/feedback/<id>/
 
-   * - psd_flirted
-     -
-     - false
+body:
 
-   * - briefing
-     - Briefing
-     - false
+.. code-block:: bash
 
-Filter user posts by category
+    {
+        "text": "Ok, I will change to blue. I hope this looks cool.",
+        "data": {},
+        "print": 1,
+        "sender": 2
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 25,
+        "date": "2019-13-03T13:05:30.601202Z",
+        "text": "Ok, I will change to blue. I hope this looks cool.",
+        "data": {},
+        "print": 1,
+        "sender": 2
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the feedback that you want to partial update and replace the <id> to feedback ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/feedback/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "text": "Ok, I will change to blue. I hope this looks cool.",
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 25,
+        "date": "2019-13-03T13:05:30.601202Z",
+        "text": "Ok, I will change to blue. I hope this looks cool.",
+        "data": {},
+        "print": 1,
+        "sender": 2
+    }
+
+P.S: The response will contains the new values.
+
+------------------------
 
 
 Tag
