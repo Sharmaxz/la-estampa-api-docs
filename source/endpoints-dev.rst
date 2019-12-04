@@ -11,6 +11,77 @@ PLEASE WRITE ME
 Briefing
 ------------------------
 
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+
+   * - id
+     - integer
+     - false
+
+   * - images
+     - FileField
+     - false
+
+   * - print
+     - Print
+     - true
+
+
+GET
+===
+
+If you want to get all briefing, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/briefing/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "text": "The best briefing ever"
+            "images": []
+            "print": 1,
+        },
+        {
+            "id": 2,
+            "text": "The second best briefing ever"
+            "images": ["briefing/1.jpg", "briefing/2.jpg"]
+            "print": 2,
+
+        }
+        ...
+    ]
+
+But if you prefer to take one briefing. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/briefing/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+        {
+            "id": 1,
+            "text": "The best briefing ever"
+            "images": []
+            "print": 1,
+        }
+
+
+
 ------------------------
 
 Category
@@ -198,7 +269,7 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - string
      - false
 
-P.S.: The date_creation and date_update is not required because the value default is the current time.
+P.S.: The date_creation and date_update are not required because the value default is the current time.
 
 GET
 ===
@@ -405,6 +476,10 @@ The color
      - required
      - extension
 
+   * - id
+     - integer
+     - false
+
    * - image
      - integer
      - true
@@ -564,6 +639,10 @@ The feedback is a print commentary that will have the behavior of a chat on the 
    * - field
      - type
      - required
+
+   * - id
+     - integer
+     - false
 
    * - print
      - Print
@@ -791,6 +870,10 @@ The tag is a representation of contents inside of a print.
      - type
      - required
 
+   * - id
+     - integer
+     - false
+
    * - clerk
      - User
      - true
@@ -801,13 +884,13 @@ The tag is a representation of contents inside of a print.
 
    * - date_request *
      - datetime
-     - true
+     - false
 
-   * - date_end *
+   * - date_end
      - datetime
      - true
 
-P.S.: The date_request and date_end is not required because the value default is the current time.
+P.S.: The date_request is not required because the value default is the current time.
 
 
 GET
@@ -830,6 +913,10 @@ The tag is a representation of contents inside of a print.
    * - field
      - type
      - required
+
+   * - id
+     - integer
+     - false
 
    * - name
      - string
@@ -868,7 +955,7 @@ If you want to get all tags, use:
     ]
 
 
-And you can order the tag by **ascending** and **descending** alphabetical order with the query "order".
+And you can order the tag by **ascending** and **descending** alphabetical order with the query "order" or use the query "category" to filter by category.
 
 .. code-block:: bash
 
