@@ -1,10 +1,15 @@
 Authenticating Requests
 -----------------------
 
-The `Print`_ and `Feedback`_ endpoints requires authentication.
+All endpoints requires authentication.
 
 PLEASE WRITE ME
 
+
+------------------------
+
+Briefing
+------------------------
 
 ------------------------
 
@@ -32,7 +37,7 @@ The category is a way to filter and sort the `Tag`_.
 GET
 ===
 
-If you want to get all category, use:
+If you want to get all categories, use:
 
 .. code-block:: bash
 
@@ -198,7 +203,7 @@ P.S.: The date_creation and date_update is not required because the value defaul
 GET
 ===
 
-If you want to get all collection, use:
+If you want to get all collections, use:
 
 .. code-block:: bash
 
@@ -295,7 +300,6 @@ body:
 
     {
         "name": "verão 2019",
-        "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
         "briefing": "The best briefing ever",
         "ps": ""
@@ -331,7 +335,6 @@ body:
 
     {
         "name": "verão 2020",
-        "date_creation": "2019-11-21T19:43:21.862687Z",
         "date_update": "2019-12-20T20:51:50.843449Z",
         "briefing": "Now this the best briefing ever",
         "ps": ""
@@ -430,7 +433,7 @@ The color
 GET
 ===
 
-If you want to get all color, use:
+If you want to get all colors, use:
 
 .. code-block:: bash
 
@@ -587,7 +590,7 @@ P.S.: The date is not required because the value default is the current time.
 GET
 ===
 
-The
+If you want to get all feedbacks, use:
 
 .. code-block:: bash
 
@@ -683,7 +686,6 @@ body:
 .. code-block:: bash
 
     {
-        "date": "2019-13-03T13:05:30.601202Z",
         "text": "Ok, I will change to blue.",
         "data": {},
         "print": 1,
@@ -719,7 +721,6 @@ body:
 .. code-block:: bash
 
     {
-        "date": "2019-13-03T13:05:30.601202Z",
         "text": "Ok, I will change to blue. I hope this looks cool.",
         "data": {},
         "print": 1,
@@ -775,89 +776,234 @@ body:
 
 P.S: The response will contains the new values.
 
-
-
-
-Print
 ------------------------
 
+Reserve
+------------------------
 
-GET
-===
+The tag is a representation of contents inside of a print.
 
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/mywork/
-
-POST
-====
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/mywork/
-
-.. list-table:: **POST**
-   :widths: 20 15 15
+.. list-table:: **Attributes**
+   :widths: 15 15 15
    :header-rows: 1
 
    * - field
      - type
      - required
 
-   * - id
-     - integer
-     - false
-
-   * - code
-     - string
+   * - clerk
+     - User
      - true
 
-   * - exclusivity
-     - string
+   * - print
+     - Print
      - true
 
-   * - status
-     - string
-     - false
-
-   * - type
-     - string
-     - false
-
-   * - date_creation
+   * - date_request *
      - datetime
      - true
 
-   * - date_update
+   * - date_end *
      - datetime
-     - false
-
-   * - image
-     -
      - true
 
-   * - psd_original
-     -
-     - true
+P.S.: The date_request and date_end is not required because the value default is the current time.
 
-   * - psd_final
-     -
-     - false
 
-   * - psd_flirted
-     -
-     - false
+GET
+===
 
-   * - briefing
-     - Briefing
-     - false
 
-Filter user posts by category
 
+
+------------------------
 
 Tag
 ------------------------
 
+The tag is a representation of contents inside of a print.
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+
+   * - name
+     - string
+     - true
+
+   * - category
+     - Category
+     - true
+
+
+GET
+===
+
+If you want to get all tags, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "name": "floral",
+            "category": 1,
+        },
+        {
+            "id": 2,
+            "name": "listras",
+            "category": 1,
+        }
+        ...
+    ]
+
+
+And you can order the tag by **ascending** and **descending** alphabetical order with the query "order".
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/?order=descending
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 12,
+            "name": "aquarela",
+            "category": 3,
+
+        },
+        {
+            "id": 20,
+            "name": "azulejos",
+            "category": 5,
+        }
+        ...
+    ]
+
+
+But if you prefer to take one feedback. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "floral",
+        "category": 1,
+    }
+
+POST
+====
+
+You need to do post request with the tag attributes in the body to create a new tag.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name": "floral",
+        "category": 1,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+
+    {
+        "id": 1,
+        "name": "floral",
+        "category": 1,
+    }
+
+
+PUT
+===
+
+Choose the tag that you want to update and replace the <id> to tag ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name": "floral",
+        "category": 2,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "floral",
+        "category": 2,
+    }
+
+P.S: The response will contains the new values.
+
+
+
+PATCH
+=====
+
+Choose the tag that you want to partial update and replace the <id> to tag ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/tag/<id>/
+
+body:
+
+.. code-block:: bash
+
+
+    {
+        "name": "abstrato",
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "abstrato",
+        "category": 1,
+
+    }
+
+P.S: The response will contains the new values.
 
 ------------------------
 

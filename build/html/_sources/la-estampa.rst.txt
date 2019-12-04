@@ -31,7 +31,7 @@ Environment Variables
 
     ALLOWED_HOSTS=''
     DATABASE_URL=''
-    DEBUG=
+    DEBUG=True
     SECRET_KEY=''
 
 
