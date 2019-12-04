@@ -13,24 +13,28 @@ Briefing
 
 
 .. list-table:: **Attributes**
-   :widths: 15 15 15
+   :widths: 15 15 15 15
    :header-rows: 1
 
    * - field
      - type
      - required
+     - extension
 
    * - id
      - integer
      - false
+     -
 
    * - images
      - FileField
      - false
+     - jpeg
 
    * - print
      - Print
      - true
+     -
 
 
 GET
@@ -80,6 +84,100 @@ But if you prefer to take one briefing. Replace the <id> for the value that you 
             "print": 1,
         }
 
+
+POST
+====
+
+You need to do post request with the briefing name in the body to create a new briefing.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/briefing/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "text": "The best briefing ever"
+        "images": []
+        "print": 1,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "text": "The best briefing ever"
+        "images": []
+        "print": 1,
+    }
+
+PUT
+===
+
+Choose the briefing that you want to update and replace the <id> to briefing ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/briefing/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "text": "The best briefing ever"
+        "images": ["briefing/1.jpg"]
+        "print": 1,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "text": "The best briefing ever"
+        "images": ["briefing/1.jpg"]
+        "print": 1,
+    }
+
+P.S: The response will contains the new values.
+
+PATCH
+=====
+
+Choose the briefing that you want to partial update and replace the <id> to briefing ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/briefing/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "print": 2,
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "text": "The best briefing ever"
+        "images": ["briefing/1.jpg"]
+        "print": 2,
+    }
+
+P.S: The response will contains the new values.
 
 
 ------------------------
@@ -479,6 +577,7 @@ The color
    * - id
      - integer
      - false
+     -
 
    * - image
      - integer
@@ -527,102 +626,6 @@ If you want to get all colors, use:
         }
         ...
     ]
-
-But if you prefer to take one category. Replace the <id> for the value that you want.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-
-    }
-
-POST
-====
-
-You need to do post request with the color attributes in the body to create a new color.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/
-
-body:
-
-.. code-block:: bash
-
-    {
-
-    }
-
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-
-    }
-
-
-PUT
-===
-
-Choose the color that you want to update and replace the <id> to color ID and add all the attributes in the body.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-body:
-
-.. code-block:: bash
-
-    {
-
-    }
-
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-
-    }
-
-P.S: The response will contains the new values.
-
-PATCH
-=====
-
-Choose the color that you want to partial update and replace the <id> to color ID and add all the attributes in the body.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-body:
-
-.. code-block:: bash
-
-    {
-
-    }
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-
-    }
-
-P.S: The response will contains the new values.
 
 
 ------------------------
