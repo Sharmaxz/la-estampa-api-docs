@@ -29,7 +29,7 @@ Briefing
    * - images
      - FileField
      - false
-     - jpeg
+     - jpeg, psd
 
    * - print
      - Print
@@ -563,8 +563,6 @@ P.S: The response will contains the new values.
 Color
 ------------------------
 
-The color
-
 .. list-table:: **Attributes**
    :widths: 15 15 15 15
    :header-rows: 1
@@ -579,6 +577,11 @@ The color
      - false
      -
 
+   * - feedback
+     - Feedback
+     - true
+     - psd
+
    * - image
      - integer
      - true
@@ -586,7 +589,7 @@ The color
 
    * - psd_original
      - integer
-     - true
+     - false
      - psd
 
    * - psd_final
@@ -599,10 +602,7 @@ The color
      - false
      - psd
 
-   * - feedback
-     - string
-     - false
-     - psd
+
 
 GET
 ===
@@ -619,13 +619,146 @@ If you want to get all colors, use:
 
     [
         {
-
+            "id" : 1,
+            "image": "color/small/1.jpg"
+            "psd_original": null,
+            "psd_final": null,
+            "psd_flirted": null,
+            "feedback": 4,
         },
         {
-
+            "id" : 2,
+            "image": "color/small/2.jpg"
+            "psd_original": color/psd/original/2.psd,
+            "psd_final": null,
+            "psd_flirted": null,
+            "feedback": 4,
         }
         ...
     ]
+
+But if you prefer to take one color. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/color/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id" : 1,
+        "image": "color/small/1.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+POST
+====
+
+You need to do post request with the color attributes in the body to create a new color.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/color/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "image": "color/small/1.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id" : 1,
+        "image": "color/small/1.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+PUT
+===
+
+Choose the color that you want to update and replace the <id> to color ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/color/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "image": "color/small/3.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id" : 1,
+        "image": "color/small/3.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the color that you want to partial update and replace the <id> to color ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/color/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "image": "color/small/3.jpg"
+    }
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id" : 1,
+        "image": "color/small/3.jpg"
+        "psd_original": null,
+        "psd_final": null,
+        "psd_flirted": null,
+        "feedback": 4,
+    }
+
+P.S: The response will contains the new values.
 
 
 ------------------------
