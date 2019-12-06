@@ -27,7 +27,7 @@ Briefing
      -
 
    * - images
-     - FileField
+     - file
      - false
      - jpeg, psd
 
@@ -394,7 +394,7 @@ If you want to get all collections, use:
         {
             "id": 2,
             "name": "inverno 2019",
-            "date_creation": "2018-12-21",
+            "date_creation": "2018-12-21T12:45:12.232511Z",
             "date_update": "2019-04-01T15:12:53.453569Z",
             "briefing": "The second best briefing ever",
             "ps": ""
@@ -580,25 +580,25 @@ Color
    * - feedback
      - Feedback
      - true
-     - psd
+     -
 
    * - image
-     - integer
+     - file
      - true
      - jpeg
 
    * - psd_original
-     - integer
+     - file
      - false
      - psd
 
    * - psd_final
-     - datetime
+     - file
      - false
      - psd
 
    * - psd_flirted
-     - datetime
+     - file
      - false
      - psd
 
@@ -745,6 +745,7 @@ body:
     {
         "image": "color/small/3.jpg"
     }
+
 **Response:**
 
 .. code-block:: bash
@@ -849,7 +850,7 @@ And you can order the feedback by **ascending** and **descending** with the quer
     [
         {
             "id": 24,
-            "date": "2019-13-03T13:03:30.601202Z",
+            "date": "2019-12-03T13:03:30.601202Z",
             "text": "Yes, I knew it. I warned you",
             "data": {},
             "print": 1,
@@ -857,7 +858,7 @@ And you can order the feedback by **ascending** and **descending** with the quer
         },
         {
             "id": 23,
-            "date": "2019-13-03T12:46:24.502605Z",
+            "date": "2019-12-03T12:46:24.502605Z",
             "text": "The yellow really was bad.",
             "data": {},
             "print": 1,
@@ -914,7 +915,7 @@ body:
 
     {
         "id": 25,
-        "date": "2019-13-03T13:05:30.601202Z",
+        "date": "2019-12-03T13:05:30.601202Z",
         "text": "Ok, I will change to blue.",
         "data": {},
         "print": 1,
@@ -949,7 +950,7 @@ body:
 
     {
         "id": 25,
-        "date": "2019-13-03T13:05:30.601202Z",
+        "date": "2019-12-03T13:05:30.601202Z",
         "text": "Ok, I will change to blue. I hope this looks cool.",
         "data": {},
         "print": 1,
@@ -982,7 +983,7 @@ body:
 
     {
         "id": 25,
-        "date": "2019-13-03T13:05:30.601202Z",
+        "date": "2019-12-03T13:05:30.601202Z",
         "text": "Ok, I will change to blue. I hope this looks cool.",
         "data": {},
         "print": 1,
@@ -991,12 +992,205 @@ body:
 
 P.S: The response will contains the new values.
 
+
+------------------------
+
+Print
+------------------------
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+     - extension
+     - choices
+
+   * - id
+     - integer
+     - false
+     -
+     -
+
+   * - designer
+     - User
+     - true
+     -
+     -
+
+   * - collection
+     - Collection
+     - false
+     -
+     -
+
+   * - code
+     - string
+     - true
+     -
+     -
+
+   * - exclusivity
+     - string
+     - true
+     -
+     - none, national, regional
+
+   * - status
+     - string
+     - true
+     -
+     - approved, revision, denied, sketch
+
+   * - type
+     - string
+     - true
+     -
+     - digital, cylinder
+
+   * - date_creation *
+     - datetime
+     - true
+     -
+     -
+
+   * - date_update *
+     - datetime
+     - true
+     -
+     -
+
+   * - image
+     - file
+     - true
+     - jpeg
+     -
+
+   * - psd_original
+     - file
+     - false
+     - psd
+     -
+
+   * - psd_final
+     - file
+     - false
+     - psd
+     -
+
+   * - psd_flirted
+     - file
+     - false
+     - psd
+     -
+
+P.S.: The date_request and date_update are not required because the value default is the current time.
+
+GET
+===
+
+If you want to get all reserve, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "tagprint_set": [
+                {
+                    "tag": {
+                        "id": 1,
+                        "name": "aquarela",
+                        "category": 1
+                    }
+                }
+            ],
+            "briefing_set": [],
+            "code": "L12345",
+            "exclusivity": "none",
+            "status": "sketch",
+            "type": "digital",
+            "date_creation": "2019-10-05T12:52:610239Z",
+            "date_update": "2019-12-03T15:64:610239Z",
+            "image": "print/small/L12345.jpg"
+            "psd_original": "print/small/L12345.jpg",
+            "psd_final": null,
+            "psd_flirted": null,
+            "designer": 1,
+            "collection": 1
+        },
+        {
+            "id": 2,
+            "tagprint_set": [
+                {
+                    "tag": {
+                        "id": 1,
+                        "name": "aquarela",
+                        "category": 1
+                    }
+                },
+                    "tag": {
+                        "id": 1,
+                        "name": "bordados",
+                        "category": 1
+                    }
+            ],
+            "briefing_set": [
+                {
+                    "id": 1,
+                    "text": "the best briefing ever",
+                    "images": "briefing/1.jpg",
+                    "print": 1
+                }
+            ],
+            "code": "L123456",
+            "exclusivity": "national",
+            "status": "approved",
+            "type": "digital",
+            "date_creation": "2019-11-05T10:31:112329Z",
+            "date_update": "2019-12-05T12:22:530123Z",
+            "image": "print/small/L123456.jpg"
+            "psd_original": "print/psd/original/L123456.psd",
+            "psd_final": "print/psd/final/L123456.psd",
+            "psd_flirted": null,
+            "designer": 1,
+            "collection": 1
+        },
+        ...
+    ]
+
+But if you prefer to take one reserve. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "clerk": 1,
+        "print": 1,
+        "date_request": "2019-12-03T13:45:31.601412Z",
+        "date_end": "2020-01-15T23:59:59.699999Z",
+    }
+
 ------------------------
 
 Reserve
 ------------------------
 
-The tag is a representation of contents inside of a print.
+The print reserve.
 
 .. list-table:: **Attributes**
    :widths: 15 15 15
@@ -1032,7 +1226,150 @@ P.S.: The date_request is not required because the value default is the current 
 GET
 ===
 
+If you want to get all reserve, use:
 
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "clerk": 1,
+            "print": 1,
+            "date_request": "2019-12-03T13:45:31.601412Z",
+            "date_end": "2020-01-15T23:59:59.699999Z",
+        },
+        {
+            "id": 2,
+            "clerk": 1,
+            "print": 2,
+            "date_request": "2019-12-06T11:53:35.615421Z",
+            "date_end": "2019-12-20T23:59:59.699999Z",
+        }
+        ...
+    ]
+
+But if you prefer to take one reserve. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "clerk": 1,
+        "print": 1,
+        "date_request": "2019-12-03T13:45:31.601412Z",
+        "date_end": "2020-01-15T23:59:59.699999Z",
+    }
+
+POST
+====
+
+You need to do post request with the reserve attributes in the body to create a new reserve.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "clerk": 1,
+        "print": 1,
+        "date_end": "2020-01-15T23:59:59.699999Z",
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "clerk": 1,
+        "print": 1,
+        "date_request": "2019-12-03T13:45:31.601412Z",
+        "date_end": "2020-01-15T23:59:59.699999Z",
+    }
+
+PUT
+===
+
+Choose the reserve that you want to update and replace the <id> to tag ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "clerk": 2,
+        "print": 1,
+        "date_end": "2020-01-20T23:59:59.699999Z",
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "clerk": 2,
+        "print": 1,
+        "date_request": "2019-12-03T13:45:31.601412Z",
+        "date_end": "2020-01-20T23:59:59.699999Z",
+    }
+
+P.S: The response will contains the new values.
+
+PATCH
+=====
+
+Choose the reserve that you want to partial update and replace the <id> to reserve ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/reserve/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "clerk": 2,
+        "print": 1,
+        "date_end": "2020-01-20T23:59:59.699999Z",
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "clerk": 2,
+        "print": 1,
+        "date_request": "2019-12-03T13:45:31.601412Z",
+        "date_end": "2020-01-20T23:59:59.699999Z",
+    }
+
+P.S: The response will contains the new values.
 
 
 ------------------------
@@ -1210,7 +1547,6 @@ body:
 
 .. code-block:: bash
 
-
     {
         "name": "abstrato",
     }
@@ -1223,7 +1559,6 @@ body:
         "id": 1,
         "name": "abstrato",
         "category": 1,
-
     }
 
 P.S: The response will contains the new values.
