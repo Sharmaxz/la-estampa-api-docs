@@ -998,6 +998,8 @@ P.S: The response will contains the new values.
 Print
 ------------------------
 
+The print is the main model. It have `home`_ endpoint that is your light version.
+
 .. list-table:: **Attributes**
    :widths: 15 15 15 15 15
    :header-rows: 1
@@ -1091,11 +1093,11 @@ P.S.: The date_request and date_update are not required because the value defaul
 GET
 ===
 
-If you want to get all reserve, use:
+If you want to get all print, use:
 
 .. code-block:: bash
 
-    https://la-estampa.herokuapp.com/api/reserve/
+    https://la-estampa.herokuapp.com/api/print/
 
 **Response:**
 
@@ -1121,7 +1123,7 @@ If you want to get all reserve, use:
             "date_creation": "2019-10-05T12:52:610239Z",
             "date_update": "2019-12-03T15:64:610239Z",
             "image": "print/small/L12345.jpg"
-            "psd_original": "print/small/L12345.jpg",
+            "psd_original": "print/psd/original/L12345.psd",
             "psd_final": null,
             "psd_flirted": null,
             "designer": 1,
@@ -1171,7 +1173,7 @@ But if you prefer to take one reserve. Replace the <id> for the value that you w
 
 .. code-block:: bash
 
-    https://la-estampa.herokuapp.com/api/reserve/<id>/
+    https://la-estampa.herokuapp.com/api/print/<id>/
 
 **Response:**
 
@@ -1179,11 +1181,265 @@ But if you prefer to take one reserve. Replace the <id> for the value that you w
 
     {
         "id": 1,
-        "clerk": 1,
-        "print": 1,
-        "date_request": "2019-12-03T13:45:31.601412Z",
-        "date_end": "2020-01-15T23:59:59.699999Z",
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "sketch",
+        "type": "digital",
+        "date_creation": "2019-10-05T12:52:610239Z",
+        "date_update": "2019-12-03T15:64:610239Z",
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.jpg",
+        "psd_final": null,
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
     }
+
+
+POST
+====
+
+You need to do post request with the print attributes in the body to create a new print.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/print/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "sketch",
+        "type": "digital",
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": null,
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "sketch",
+        "type": "digital",
+        "date_creation": "2019-10-05T12:52:610239Z",
+        "date_update": null,
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": null,
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
+    }
+
+
+PUT
+===
+
+Choose the print that you want to update and replace the <id> to tag ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/print/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [
+            {
+                "id": 1,
+                "text": "the best briefing ever",
+                "images": "briefing/1.jpg",
+                "print": 1
+            }
+        ],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "sketch",
+        "type": "digital",
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": "print/psd/final/L12345.psd",
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [
+            {
+                "id": 1,
+                "text": "the best briefing ever",
+                "images": "briefing/1.jpg",
+                "print": 1
+            }
+        ],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "revision",
+        "type": "digital",
+        "date_creation": "2019-10-05T12:52:610239Z",
+        "date_update": "2019-12-03T15:64:610239Z",
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": "print/psd/final/L12345.psd",
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the print that you want to partial update and replace the <id> to reserve ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/print/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "status": "revision",
+        "psd_final": "print/psd/final/L12345.psd",
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
+                }
+            }
+        ],
+        "briefing_set": [],
+        "code": "L12345",
+        "exclusivity": "none",
+        "status": "revision",
+        "type": "digital",
+        "date_creation": "2019-10-05T12:52:610239Z",
+        "date_update": "2019-12-03T15:64:610239Z",
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": "print/psd/final/L12345.psd",
+        "psd_flirted": null,
+        "designer": 1,
+        "collection": 1
+    }
+
+P.S: The response will contains the new values.
+
+HOME
+====
+
+The home endpoint is a light version of the print GET method and don't accepted another method type.
+
+GET
+...
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/home/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "image": "/print/small/L231323.jpg"
+            "code": "L231323",
+            "status": "revision",
+            "exclusivity": "none",
+            "collection": null,
+            "type": "digital"
+        },
+        {
+            "image": "/print/small/L12345.jpg"
+            "code": "L12345",
+            "status": "approved",
+            "exclusivity": "national",
+            "collection": 2,
+            "type": "digital"
+        }
+        ...
+    ]
 
 ------------------------
 
