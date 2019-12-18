@@ -11,10 +11,10 @@ Requesting the bearer token
    :widths: 15 15
 
    * - client_id
-     -
+     - client_id
 
    * - client_secret
-     -
+     - client_secret
 
    * - grant_type
      - password
@@ -52,7 +52,6 @@ Refreshing token
 
 .. list-table:: **Attributes**
    :widths: 15 15
-   :header-rows: 1
 
    * - client_id
      - client_id
