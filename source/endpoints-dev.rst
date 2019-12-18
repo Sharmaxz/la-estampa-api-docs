@@ -1,9 +1,88 @@
 Authenticating Requests
 -----------------------
 
-All endpoints requires authentication.
+You need to authenticate to have permission to access endpoints.
 
-PLEASE WRITE ME
+
+Requesting the bearer token
+===========================
+
+.. list-table:: **Attributes**
+   :widths: 15 15
+
+   * - client_id
+     -
+
+   * - client_secret
+     -
+
+   * - grant_type
+     - password
+
+   * - username
+     - your email
+
+   * - password
+     - your password
+
+
+.. code-block:: bash
+
+    curl -X POST -d "client_id=<client_id>&client_secret=<client_secret>&grant_type=password&username=<your_username>&password=<your_password>"  https://la-estampa.herokuapp.com/o/token/
+
+
+**Response
+
+.. code-block:: bash
+
+    {
+        "access_token": "AvjYU4gkGAHPfkod66XnKNyxGNvmE0",
+        "expires_in": 172800,
+        "token_type": "Bearer",
+        "scope": "read write",
+        "refresh_token": "1qGSwwkU2TggY7LAQL6jIMcyTBcYGf"
+    }
+
+You have access to use the API now.
+
+
+
+Refreshing token
+================
+
+.. list-table:: **Attributes**
+   :widths: 15 15
+   :header-rows: 1
+
+   * - client_id
+     - client_id
+
+   * - client_secret
+     - client_secret
+
+   * - grant_type
+     - password
+
+   * - refresh_token
+     - your refresh token
+
+
+.. code-block:: bash
+
+    curl -X POST -d "client_id=<client_id>&client_secret=<client_secret>&grant_type=password&refresh_token=<your_refresh_token>"  https://la-estampa.herokuapp.com/o/token/
+
+
+**Response
+
+.. code-block:: bash
+
+    {
+        "access_token": "<your_access_token>",
+        "expires_in": 172800,
+        "token_type": "Bearer",
+        "scope": "read write",
+        "refresh_token": "<your_refresh_token>"
+    }
 
 
 ------------------------
