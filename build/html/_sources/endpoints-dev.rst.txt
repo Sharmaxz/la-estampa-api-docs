@@ -104,6 +104,11 @@ Briefing
      - false
      -
 
+   * - text
+     - string
+     - true
+     -
+
    * - images
      - file
      - false
@@ -437,6 +442,10 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - datetime
      - false
 
+   * - type
+     - arrayfield of string
+     - COL, ID
+
    * - briefing
      - string
      - false
@@ -466,6 +475,7 @@ If you want to get all collections, use:
             "name": "verão 2019",
             "date_creation": "2018-11-21T12:21:43.862687Z",
             "date_update": "2018-12-20T15:50:25.843449Z",
+            "type": ['COL'],
             "briefing": "The best briefing ever",
             "ps": ""
         },
@@ -474,6 +484,7 @@ If you want to get all collections, use:
             "name": "inverno 2019",
             "date_creation": "2018-12-21T12:45:12.232511Z",
             "date_update": "2019-04-01T15:12:53.453569Z",
+            "type": ['id'],
             "briefing": "The second best briefing ever",
             "ps": ""
         }
@@ -496,6 +507,7 @@ And you can order the Collection by **ascending** and **descending** with the qu
             "name": "verão 2020",
             "date_creation": "2019-12-20T21:35:32.847649Z",
             "date_update": "2019-12-20T20:51:50.843449Z",
+            "type": ['COL'],
             "briefing": "The one hundred and forty-fifth best briefing ever",
             "ps": ""
         },
@@ -504,6 +516,7 @@ And you can order the Collection by **ascending** and **descending** with the qu
             "name": "inverno 2020",
             "date_creation": "2019-11-21T19:43:21.862687Z",
             "date_update": null,
+            "type": ['COL'],
             "briefing": "The hundred and forty-fourth best briefing ever",
             "ps": ""
         }
@@ -527,6 +540,7 @@ But if you prefer to take one category. Replace the <id> for the value that you 
         "name": "verão 2019",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
+        "type": ['COL'],
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -548,6 +562,7 @@ body:
     {
         "name": "verão 2019",
         "date_update": "2018-12-20T15:50:25.843449Z",
+        "type": ['COL'],
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -562,6 +577,7 @@ body:
         "name": "verão 2019",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
+        "type": ['COL'],
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -584,6 +600,7 @@ body:
         "name": "verão 2020",
         "date_update": "2019-12-20T20:51:50.843449Z",
         "briefing": "Now this the best briefing ever",
+        "type": ['COL'],
         "ps": ""
     }
 
@@ -597,6 +614,7 @@ body:
         "name": "verão 2020",
         "date_creation": "2019-11-21T19:43:21.862687Z",
         "date_update": "2019-12-20T21:23:12.783479Z",
+        "type": ['COL'],
         "briefing": "Now this the best briefing ever",
         "ps": ""
     }
@@ -629,6 +647,7 @@ body:
         "name": "outono 2020",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2019-12-20T21:23:12.783479Z",
+        "type": ['COL'],
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -655,14 +674,19 @@ Color
      - false
      -
 
+   * - print
+     - Print
+     - false
+     -
+
    * - feedback
      - Feedback
-     - true
+     - false
      -
 
    * - image
      - file
-     - true
+     - false
      - jpeg
 
    * - psd_original
@@ -703,6 +727,7 @@ If you want to get all colors, use:
             "psd_final": null,
             "psd_flirted": null,
             "feedback": 4,
+            "print": 1,
         },
         {
             "id" : 2,
@@ -711,6 +736,7 @@ If you want to get all colors, use:
             "psd_final": null,
             "psd_flirted": null,
             "feedback": 4,
+            "print": 2,
         }
         ...
     ]
@@ -732,6 +758,7 @@ But if you prefer to take one color. Replace the <id> for the value that you wan
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 POST
@@ -753,6 +780,7 @@ body:
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 
@@ -767,6 +795,7 @@ body:
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 PUT
@@ -788,6 +817,7 @@ body:
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 
@@ -802,6 +832,7 @@ body:
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 P.S: The response will contains the new values.
@@ -835,6 +866,7 @@ body:
         "psd_final": null,
         "psd_flirted": null,
         "feedback": 4,
+        "print": 1,
     }
 
 P.S: The response will contains the new values.
@@ -1094,9 +1126,21 @@ The print is the main model. It have `home`_ endpoint that is your light version
      -
      -
 
+   * - owner
+     - Client
+     - false
+     -
+     -
+
    * - designer
      - User
-     - true
+     - false
+     -
+     -
+
+   * - coordinator
+     - User
+     - false
      -
      -
 
@@ -1112,23 +1156,48 @@ The print is the main model. It have `home`_ endpoint that is your light version
      -
      -
 
-   * - exclusivity
-     - string
-     - true
-     -
-     - none, national, regional
-
    * - status
      - string
      - true
      -
-     - approved, revision, denied, sketch
+     - APP, REV, DEN, SKE
 
    * - type
      - string
      - true
      -
-     - digital, cylinder
+     - DIG, CYL, BOTH
+
+   * - exclusivity
+     - string
+     - false
+     -
+     - INT, NAT, REG, VIN
+
+   * - exclusivity_int
+     - string
+     - false
+     -
+     - Acronym of all countries in the world
+
+   * - exclusivity_reg
+     - string
+     - false
+     -
+     - Acronym of all brazil states
+
+   * - exclusivity_other
+     - string
+     - false
+     -
+     -
+
+   * - expire
+     - boolean
+     - false
+     -
+     -
+
 
    * - date_creation *
      - datetime
@@ -1138,13 +1207,31 @@ The print is the main model. It have `home`_ endpoint that is your light version
 
    * - date_update *
      - datetime
-     - true
+     - false
+     -
+     -
+
+   * - date_approved
+     - datetime
+     - false
+     -
+     -
+
+   * - date_expiration
+     - datetime
+     - false
+     -
+     -
+
+   * - dpi
+     - float
+     - false
      -
      -
 
    * - image
      - file
-     - true
+     - false
      - jpeg
      -
 
@@ -1166,7 +1253,19 @@ The print is the main model. It have `home`_ endpoint that is your light version
      - psd
      -
 
-P.S.: The date_request and date_update are not required because the value default is the current time.
+   * - rapport
+     - string
+     - false
+     -
+     -
+
+   * - rapport_direction
+     - boolean
+     - false
+     -
+     -
+
+P.S.: The date_request and date_update and  are not required because the value default is the current time.
 
 GET
 ===
@@ -1182,7 +1281,7 @@ If you want to get all print, use:
 .. code-block:: bash
 
     [
-        {
+     {
             "id": 1,
             "tagprint_set": [
                 {
@@ -1195,54 +1294,66 @@ If you want to get all print, use:
             ],
             "briefing_set": [],
             "code": "L12345",
-            "exclusivity": "none",
-            "status": "sketch",
-            "type": "digital",
-            "date_creation": "2019-10-05T12:52:610239Z",
-            "date_update": "2019-12-03T15:64:610239Z",
+            "status": "APP",
+            "type": null,
+            "exclusivity": "REG",
+            "exclusivity_int": [],
+            "exclusivity_reg": [
+                "SP"
+            ],
+            "exclusivity_other": null,
+            "expire": true,
+            "date_creation": "2019-10-01T00:00:00Z",
+            "date_update": "2019-10-01T00:00:00Z",
+            "date_approved": "2019-11-19T00:00:00Z",
+            "date_expiration": null,
+            "dpi": null,
             "image": "print/small/L12345.jpg"
             "psd_original": "print/psd/original/L12345.psd",
             "psd_final": null,
             "psd_flirted": null,
-            "designer": 1,
-            "collection": 1
+            "rapport": "",
+            "rapport_direction": false,
+            "owner": null,
+            "designer": 7,
+            "coordinator": 6,
+            "collection": null
         },
         {
             "id": 2,
             "tagprint_set": [
                 {
                     "tag": {
-                        "id": 1,
-                        "name": "aquarela",
-                        "category": 1
+                        "id": 27,
+                        "name": "Figurativo",
+                        "category": 3
                     }
-                },
-                    "tag": {
-                        "id": 1,
-                        "name": "bordados",
-                        "category": 1
-                    }
-            ],
-            "briefing_set": [
-                {
-                    "id": 1,
-                    "text": "the best briefing ever",
-                    "images": "briefing/1.jpg",
-                    "print": 1
                 }
             ],
-            "code": "L123456",
-            "exclusivity": "national",
-            "status": "approved",
-            "type": "digital",
-            "date_creation": "2019-11-05T10:31:112329Z",
-            "date_update": "2019-12-05T12:22:530123Z",
-            "image": "print/small/L123456.jpg"
-            "psd_original": "print/psd/original/L123456.psd",
-            "psd_final": "print/psd/final/L123456.psd",
+            "briefing_set": [],
+            "code": "L12346",
+            "status": "APP",
+            "type": null,
+            "exclusivity": "INT",
+            "exclusivity_int": [],
+            "exclusivity_reg": [],
+            "exclusivity_other": null,
+            "expire": false,
+            "date_creation": "2019-10-01T00:00:00Z",
+            "date_update": "2019-10-01T00:00:00Z",
+            "date_approved": "2019-10-01T00:00:00Z",
+            "date_expiration": null,
+            "dpi": null,
+            "image": null,
+            "psd_original": null,
+            "psd_final": null,
             "psd_flirted": null,
-            "designer": 1,
-            "collection": 1
+            "rapport": "",
+            "rapport_direction": false,
+            "owner": null,
+            "designer": 7,
+            "coordinator": 7,
+            "collection": null
         },
         ...
     ]
@@ -1257,31 +1368,44 @@ But if you prefer to take one reserve. Replace the <id> for the value that you w
 
 .. code-block:: bash
 
-    {
-        "id": 1,
-        "tagprint_set": [
-            {
-                "tag": {
-                    "id": 1,
-                    "name": "aquarela",
-                    "category": 1
+     {
+            "id": 1,
+            "tagprint_set": [
+                {
+                    "tag": {
+                        "id": 1,
+                        "name": "aquarela",
+                        "category": 1
+                    }
                 }
-            }
-        ],
-        "briefing_set": [],
-        "code": "L12345",
-        "exclusivity": "none",
-        "status": "sketch",
-        "type": "digital",
-        "date_creation": "2019-10-05T12:52:610239Z",
-        "date_update": "2019-12-03T15:64:610239Z",
-        "image": "print/small/L12345.jpg"
-        "psd_original": "print/psd/original/L12345.jpg",
-        "psd_final": null,
-        "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+            ],
+            "briefing_set": [],
+            "code": "L12345",
+            "status": "APP",
+            "type": null,
+            "exclusivity": "REG",
+            "exclusivity_int": [],
+            "exclusivity_reg": [
+                "SP"
+            ],
+            "exclusivity_other": null,
+            "expire": false,
+            "date_creation": "2019-10-01T00:00:00Z",
+            "date_update": "2019-10-01T00:00:00Z",
+            "date_approved": "2019-11-19T00:00:00Z",
+            "date_expiration": null,
+            "dpi": null,
+            "image": "print/small/L12345.jpg"
+            "psd_original": "print/psd/original/L12345.psd",
+            "psd_final": null,
+            "psd_flirted": null,
+            "rapport": "",
+            "rapport_direction": false,
+            "owner": null,
+            "designer": 7,
+            "coordinator": 6,
+            "collection": null
+        }
 
 
 POST
@@ -1297,7 +1421,7 @@ body:
 
 .. code-block:: bash
 
-    {
+     {
         "tagprint_set": [
             {
                 "tag": {
@@ -1309,16 +1433,31 @@ body:
         ],
         "briefing_set": [],
         "code": "L12345",
-        "exclusivity": "none",
-        "status": "sketch",
-        "type": "digital",
+        "status": "APP",
+        "type": null,
+        "exclusivity": "REG",
+        "exclusivity_int": [],
+        "exclusivity_reg": [
+            "SP"
+        ],
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
         "psd_final": null,
         "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null
+     },
 
 
 **Response:**
@@ -1338,18 +1477,31 @@ body:
         ],
         "briefing_set": [],
         "code": "L12345",
-        "exclusivity": "none",
-        "status": "sketch",
-        "type": "digital",
-        "date_creation": "2019-10-05T12:52:610239Z",
-        "date_update": null,
+        "status": "APP",
+        "type": null,
+        "exclusivity": "REG",
+        "exclusivity_int": [],
+        "exclusivity_reg": [
+            "SP"
+        ],
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
         "psd_final": null,
         "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null
+     },
 
 
 PUT
@@ -1383,17 +1535,34 @@ body:
                 "print": 1
             }
         ],
-        "code": "L12345",
-        "exclusivity": "none",
-        "status": "sketch",
-        "type": "digital",
+               "code": "L12345",
+        "status": "APP",
+        "type": null,
+        "exclusivity": "REG",
+        "exclusivity_int": [],
+        "exclusivity_reg": [
+            "SP"
+        ],
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
-        "psd_final": "print/psd/final/L12345.psd",
+        "psd_final": null,
         "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null
+     },
+
+
 
 
 **Response:**
@@ -1401,6 +1570,7 @@ body:
 .. code-block:: bash
 
     {
+        "id": 1
         "tagprint_set": [
             {
                 "tag": {
@@ -1418,19 +1588,32 @@ body:
                 "print": 1
             }
         ],
-        "code": "L12345",
-        "exclusivity": "none",
-        "status": "revision",
-        "type": "digital",
-        "date_creation": "2019-10-05T12:52:610239Z",
-        "date_update": "2019-12-03T15:64:610239Z",
+               "code": "L12345",
+        "status": "APP",
+        "type": null,
+        "exclusivity": "REG",
+        "exclusivity_int": [],
+        "exclusivity_reg": [
+            "SP"
+        ],
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
-        "psd_final": "print/psd/final/L12345.psd",
+        "psd_final": null,
         "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null
+     },
 
 P.S: The response will contains the new values.
 
@@ -1449,7 +1632,7 @@ body:
 .. code-block:: bash
 
     {
-        "status": "revision",
+        "status": "REV",
         "psd_final": "print/psd/final/L12345.psd",
     }
 
@@ -1458,6 +1641,7 @@ body:
 .. code-block:: bash
 
     {
+        "id": 1
         "tagprint_set": [
             {
                 "tag": {
@@ -1467,20 +1651,34 @@ body:
                 }
             }
         ],
-        "briefing_set": [],
-        "code": "L12345",
-        "exclusivity": "none",
-        "status": "revision",
-        "type": "digital",
-        "date_creation": "2019-10-05T12:52:610239Z",
-        "date_update": "2019-12-03T15:64:610239Z",
+        "briefing_set": [
+            {
+                "id": 1,
+                "text": "the best briefing ever",
+                "images": "briefing/1.jpg",
+                "print": 1
+            }
+        ],
+               "code": "L12345",
+        "status": "REV",
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
-        "psd_final": "print/psd/final/L12345.psd",
+        "psd_final": null,
         "psd_flirted": null,
-        "designer": 1,
-        "collection": 1
-    }
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null
+     },
 
 P.S: The response will contains the new values.
 
@@ -1503,18 +1701,18 @@ GET
         {
             "image": "/print/small/L231323.jpg"
             "code": "L231323",
-            "status": "revision",
+            "status": "REV",
             "exclusivity": "none",
             "collection": null,
-            "type": "digital"
+            "type": "DIG"
         },
         {
             "image": "/print/small/L12345.jpg"
             "code": "L12345",
-            "status": "approved",
-            "exclusivity": "national",
+            "status": "APP",
+            "exclusivity": "NAT",
             "collection": 2,
-            "type": "digital"
+            "type": "DIG"
         }
         ...
     ]
@@ -1538,13 +1736,18 @@ The print reserve.
      - integer
      - false
 
-   * - clerk
+   * - seller
      - User
+     - false
+
+
+   * - client
+     - Client
      - true
 
    * - print
      - Print
-     - true
+     - false
 
    * - date_request *
      - datetime

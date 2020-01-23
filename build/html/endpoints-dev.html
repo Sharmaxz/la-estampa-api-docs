@@ -328,12 +328,17 @@
 <td><p>false</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>images</p></td>
+<tr class="row-odd"><td><p>text</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>images</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>jpeg, psd</p></td>
 </tr>
-<tr class="row-even"><td><p>print</p></td>
+<tr class="row-odd"><td><p>print</p></td>
 <td><p>Print</p></td>
 <td><p>true</p></td>
 <td></td>
@@ -609,11 +614,15 @@
 <td><p>datetime</p></td>
 <td><p>false</p></td>
 </tr>
-<tr class="row-even"><td><p>briefing</p></td>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>arrayfield of string</p></td>
+<td><p>COL, ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>briefing</p></td>
 <td><p>string</p></td>
 <td><p>false</p></td>
 </tr>
-<tr class="row-odd"><td><p>ps</p></td>
+<tr class="row-even"><td><p>ps</p></td>
 <td><p>string</p></td>
 <td><p>false</p></td>
 </tr>
@@ -633,6 +642,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>,
@@ -641,6 +651,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;inverno 2019&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-12-21T12:45:12.232511Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-04-01T15:12:53.453569Z&quot;</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The second best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>
@@ -659,6 +670,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-12-20T21:35:32.847649Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T20:51:50.843449Z&quot;</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The one hundred and forty-fifth best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>,
@@ -667,6 +679,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;inverno 2020&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-11-21T19:43:21.862687Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: null,
+        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The hundred and forty-fourth best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>
@@ -684,6 +697,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -700,6 +714,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -711,6 +726,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -728,6 +744,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T20:51:50.843449Z&quot;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;Now this the best briefing ever&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
 </pre></div>
@@ -738,6 +755,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-11-21T19:43:21.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T21:23:12.783479Z&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;Now this the best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -763,6 +781,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;outono 2020&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T21:23:12.783479Z&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -795,27 +814,32 @@
 <td><p>false</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>feedback</p></td>
-<td><p>Feedback</p></td>
-<td><p>true</p></td>
+<tr class="row-odd"><td><p>print</p></td>
+<td><p>Print</p></td>
+<td><p>false</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>image</p></td>
+<tr class="row-even"><td><p>feedback</p></td>
+<td><p>Feedback</p></td>
+<td><p>false</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>image</p></td>
 <td><p>file</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td><p>jpeg</p></td>
 </tr>
-<tr class="row-odd"><td><p>psd_original</p></td>
+<tr class="row-even"><td><p>psd_original</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 </tr>
-<tr class="row-even"><td><p>psd_final</p></td>
+<tr class="row-odd"><td><p>psd_final</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 </tr>
-<tr class="row-odd"><td><p>psd_flirted</p></td>
+<tr class="row-even"><td><p>psd_flirted</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
@@ -837,6 +861,7 @@
         <span class="s2">&quot;psd_final&quot;</span>: null,
         <span class="s2">&quot;psd_flirted&quot;</span>: null,
         <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+        <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
     <span class="o">}</span>,
     <span class="o">{</span>
         <span class="s2">&quot;id&quot;</span> : <span class="m">2</span>,
@@ -845,6 +870,7 @@
         <span class="s2">&quot;psd_final&quot;</span>: null,
         <span class="s2">&quot;psd_flirted&quot;</span>: null,
         <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+        <span class="s2">&quot;print&quot;</span>: <span class="m">2</span>,
     <span class="o">}</span>
     ...
 <span class="o">]</span>
@@ -862,6 +888,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -879,6 +906,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -890,6 +918,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -907,6 +936,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -918,6 +948,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -943,6 +974,7 @@
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
     <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
+    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -1173,9 +1205,21 @@
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>designer</p></td>
+<tr class="row-odd"><td><p>owner</p></td>
+<td><p>Client</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>designer</p></td>
 <td><p>User</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>coordinator</p></td>
+<td><p>User</p></td>
+<td><p>false</p></td>
 <td></td>
 <td></td>
 </tr>
@@ -1191,23 +1235,47 @@
 <td></td>
 <td></td>
 </tr>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+<td></td>
+<td><p>APP, REV, DEN, SKE</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+<td></td>
+<td><p>DIG, CYL, BOTH</p></td>
+</tr>
 <tr class="row-even"><td><p>exclusivity</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
-<td><p>none, national, regional</p></td>
+<td><p>INT, NAT, REG, VIN</p></td>
 </tr>
-<tr class="row-odd"><td><p>status</p></td>
+<tr class="row-odd"><td><p>exclusivity_int</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
-<td><p>approved, revision, denied, sketch</p></td>
+<td><p>Acronym of all countries in the world</p></td>
 </tr>
-<tr class="row-even"><td><p>type</p></td>
+<tr class="row-even"><td><p>exclusivity_reg</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
-<td><p>digital, cylinder</p></td>
+<td><p>Acronym of all brazil states</p></td>
+</tr>
+<tr class="row-odd"><td><p>exclusivity_other</p></td>
+<td><p>string</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>expire</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>date_creation *</p></td>
 <td><p>datetime</p></td>
@@ -1217,37 +1285,67 @@
 </tr>
 <tr class="row-even"><td><p>date_update *</p></td>
 <td><p>datetime</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>image</p></td>
+<tr class="row-odd"><td><p>date_approved</p></td>
+<td><p>datetime</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>date_expiration</p></td>
+<td><p>datetime</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>dpi</p></td>
+<td><p>float</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>image</p></td>
 <td><p>file</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td><p>jpeg</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>psd_original</p></td>
+<tr class="row-odd"><td><p>psd_original</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>psd_final</p></td>
+<tr class="row-even"><td><p>psd_final</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>psd_flirted</p></td>
+<tr class="row-odd"><td><p>psd_flirted</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>rapport</p></td>
+<td><p>string</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>rapport_direction</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>P.S.: The date_request and date_update are not required because the value default is the current time.</p>
+<p>P.S.: The date_request and date_update and  are not required because the value default is the current time.</p>
 <div class="section" id="id21">
 <h2>GET<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
 <p>If you want to get all print, use:</p>
@@ -1256,7 +1354,7 @@
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
-    <span class="o">{</span>
+ <span class="o">{</span>
         <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
         <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
             <span class="o">{</span>
@@ -1269,54 +1367,66 @@
         <span class="o">]</span>,
         <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
         <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;sketch&quot;</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-        <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-05T12:52:610239Z&quot;</span>,
-        <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-03T15:64:610239Z&quot;</span>,
+        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+        <span class="s2">&quot;type&quot;</span>: null,
+        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+        <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+        <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;SP&quot;</span>
+        <span class="o">]</span>,
+        <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+        <span class="s2">&quot;expire&quot;</span>: true,
+        <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_expiration&quot;</span>: null,
+        <span class="s2">&quot;dpi&quot;</span>: null,
         <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
         <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
         <span class="s2">&quot;psd_final&quot;</span>: null,
         <span class="s2">&quot;psd_flirted&quot;</span>: null,
-        <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-        <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
+        <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+        <span class="s2">&quot;rapport_direction&quot;</span>: false,
+        <span class="s2">&quot;owner&quot;</span>: null,
+        <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+        <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+        <span class="s2">&quot;collection&quot;</span>: null
     <span class="o">}</span>,
     <span class="o">{</span>
         <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
         <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
             <span class="o">{</span>
                 <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
-                    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
-                    <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
+                    <span class="s2">&quot;id&quot;</span>: <span class="m">27</span>,
+                    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Figurativo&quot;</span>,
+                    <span class="s2">&quot;category&quot;</span>: <span class="m">3</span>
                 <span class="o">}</span>
-            <span class="o">}</span>,
-                <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
-                    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;bordados&quot;</span>,
-                    <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
-                <span class="o">}</span>
-        <span class="o">]</span>,
-        <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[</span>
-            <span class="o">{</span>
-                <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                <span class="s2">&quot;text&quot;</span>: <span class="s2">&quot;the best briefing ever&quot;</span>,
-                <span class="s2">&quot;images&quot;</span>: <span class="s2">&quot;briefing/1.jpg&quot;</span>,
-                <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>
             <span class="o">}</span>
         <span class="o">]</span>,
-        <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L123456&quot;</span>,
-        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;national&quot;</span>,
-        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;approved&quot;</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-        <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-11-05T10:31:112329Z&quot;</span>,
-        <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-05T12:22:530123Z&quot;</span>,
-        <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L123456.jpg&quot;</span>
-        <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L123456.psd&quot;</span>,
-        <span class="s2">&quot;psd_final&quot;</span>: <span class="s2">&quot;print/psd/final/L123456.psd&quot;</span>,
+        <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
+        <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12346&quot;</span>,
+        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+        <span class="s2">&quot;type&quot;</span>: null,
+        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;INT&quot;</span>,
+        <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+        <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[]</span>,
+        <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+        <span class="s2">&quot;expire&quot;</span>: false,
+        <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+        <span class="s2">&quot;date_expiration&quot;</span>: null,
+        <span class="s2">&quot;dpi&quot;</span>: null,
+        <span class="s2">&quot;image&quot;</span>: null,
+        <span class="s2">&quot;psd_original&quot;</span>: null,
+        <span class="s2">&quot;psd_final&quot;</span>: null,
         <span class="s2">&quot;psd_flirted&quot;</span>: null,
-        <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-        <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
+        <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+        <span class="s2">&quot;rapport_direction&quot;</span>: false,
+        <span class="s2">&quot;owner&quot;</span>: null,
+        <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+        <span class="s2">&quot;coordinator&quot;</span>: <span class="m">7</span>,
+        <span class="s2">&quot;collection&quot;</span>: null
     <span class="o">}</span>,
     ...
 <span class="o">]</span>
@@ -1328,30 +1438,43 @@
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
-                <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
-                <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">]</span>,
-    <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
-    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;sketch&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-05T12:52:610239Z&quot;</span>,
-    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-03T15:64:610239Z&quot;</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.jpg&quot;</span>,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+       <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+       <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
+           <span class="o">{</span>
+               <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
+                   <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+                   <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
+                   <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
+               <span class="o">}</span>
+           <span class="o">}</span>
+       <span class="o">]</span>,
+       <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
+       <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+       <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+       <span class="s2">&quot;type&quot;</span>: null,
+       <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+       <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+       <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+           <span class="s2">&quot;SP&quot;</span>
+       <span class="o">]</span>,
+       <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+       <span class="s2">&quot;expire&quot;</span>: false,
+       <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+       <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+       <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+       <span class="s2">&quot;date_expiration&quot;</span>: null,
+       <span class="s2">&quot;dpi&quot;</span>: null,
+       <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
+       <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
+       <span class="s2">&quot;psd_final&quot;</span>: null,
+       <span class="s2">&quot;psd_flirted&quot;</span>: null,
+       <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+       <span class="s2">&quot;rapport_direction&quot;</span>: false,
+       <span class="s2">&quot;owner&quot;</span>: null,
+       <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+       <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+       <span class="s2">&quot;collection&quot;</span>: null
+   <span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1363,27 +1486,42 @@
 </div>
 <p>body:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
-        <span class="o">{</span>
-            <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
-                <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
-                <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-    <span class="o">]</span>,
-    <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
-    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;sketch&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+   <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
+       <span class="o">{</span>
+           <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
+               <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+               <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
+               <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
+           <span class="o">}</span>
+       <span class="o">}</span>
+   <span class="o">]</span>,
+   <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
+   <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+   <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+   <span class="s2">&quot;type&quot;</span>: null,
+   <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+   <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+   <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+       <span class="s2">&quot;SP&quot;</span>
+   <span class="o">]</span>,
+   <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+   <span class="s2">&quot;expire&quot;</span>: false,
+   <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+   <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+   <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+   <span class="s2">&quot;date_expiration&quot;</span>: null,
+   <span class="s2">&quot;dpi&quot;</span>: null,
+   <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
+   <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
+   <span class="s2">&quot;psd_final&quot;</span>: null,
+   <span class="s2">&quot;psd_flirted&quot;</span>: null,
+   <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+   <span class="s2">&quot;rapport_direction&quot;</span>: false,
+   <span class="s2">&quot;owner&quot;</span>: null,
+   <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+   <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+   <span class="s2">&quot;collection&quot;</span>: null
+<span class="o">}</span>,
 </pre></div>
 </div>
 <p><strong>Response:</strong></p>
@@ -1400,18 +1538,31 @@
     <span class="o">]</span>,
     <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
     <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;sketch&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-05T12:52:610239Z&quot;</span>,
-    <span class="s2">&quot;date_update&quot;</span>: null,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: null,
+    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+    <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+    <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;SP&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+    <span class="s2">&quot;expire&quot;</span>: false,
+    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
     <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+    <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;rapport_direction&quot;</span>: false,
+    <span class="s2">&quot;owner&quot;</span>: null,
+    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+    <span class="s2">&quot;collection&quot;</span>: null
+ <span class="o">}</span>,
 </pre></div>
 </div>
 </div>
@@ -1440,21 +1591,37 @@
             <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>
         <span class="o">}</span>
     <span class="o">]</span>,
-    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;sketch&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
+           <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: null,
+    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+    <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+    <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;SP&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+    <span class="s2">&quot;expire&quot;</span>: false,
+    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
-    <span class="s2">&quot;psd_final&quot;</span>: <span class="s2">&quot;print/psd/final/L12345.psd&quot;</span>,
+    <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+    <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;rapport_direction&quot;</span>: false,
+    <span class="s2">&quot;owner&quot;</span>: null,
+    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+    <span class="s2">&quot;collection&quot;</span>: null
+ <span class="o">}</span>,
 </pre></div>
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>
     <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
         <span class="o">{</span>
             <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
@@ -1472,19 +1639,32 @@
             <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>
         <span class="o">}</span>
     <span class="o">]</span>,
-    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;revision&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-05T12:52:610239Z&quot;</span>,
-    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-03T15:64:610239Z&quot;</span>,
+           <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: null,
+    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+    <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+    <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;SP&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+    <span class="s2">&quot;expire&quot;</span>: false,
+    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
-    <span class="s2">&quot;psd_final&quot;</span>: <span class="s2">&quot;print/psd/final/L12345.psd&quot;</span>,
+    <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+    <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;rapport_direction&quot;</span>: false,
+    <span class="s2">&quot;owner&quot;</span>: null,
+    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+    <span class="s2">&quot;collection&quot;</span>: null
+ <span class="o">}</span>,
 </pre></div>
 </div>
 <p>P.S: The response will contains the new values.</p>
@@ -1497,13 +1677,14 @@
 </div>
 <p>body:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;revision&quot;</span>,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;REV&quot;</span>,
     <span class="s2">&quot;psd_final&quot;</span>: <span class="s2">&quot;print/psd/final/L12345.psd&quot;</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>
     <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
         <span class="o">{</span>
             <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
@@ -1513,20 +1694,34 @@
             <span class="o">}</span>
         <span class="o">}</span>
     <span class="o">]</span>,
-    <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
-    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
-    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;revision&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>,
-    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-05T12:52:610239Z&quot;</span>,
-    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-03T15:64:610239Z&quot;</span>,
+    <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[</span>
+        <span class="o">{</span>
+            <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+            <span class="s2">&quot;text&quot;</span>: <span class="s2">&quot;the best briefing ever&quot;</span>,
+            <span class="s2">&quot;images&quot;</span>: <span class="s2">&quot;briefing/1.jpg&quot;</span>,
+            <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>
+        <span class="o">}</span>
+    <span class="o">]</span>,
+           <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;REV&quot;</span>,
+    <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+    <span class="s2">&quot;expire&quot;</span>: false,
+    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
-    <span class="s2">&quot;psd_final&quot;</span>: <span class="s2">&quot;print/psd/final/L12345.psd&quot;</span>,
+    <span class="s2">&quot;psd_final&quot;</span>: null,
     <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;designer&quot;</span>: <span class="m">1</span>,
-    <span class="s2">&quot;collection&quot;</span>: <span class="m">1</span>
-<span class="o">}</span>
+    <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;rapport_direction&quot;</span>: false,
+    <span class="s2">&quot;owner&quot;</span>: null,
+    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+    <span class="s2">&quot;collection&quot;</span>: null
+ <span class="o">}</span>,
 </pre></div>
 </div>
 <p>P.S: The response will contains the new values.</p>
@@ -1544,18 +1739,18 @@
     <span class="o">{</span>
         <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;/print/small/L231323.jpg&quot;</span>
         <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L231323&quot;</span>,
-        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;revision&quot;</span>,
+        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;REV&quot;</span>,
         <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;none&quot;</span>,
         <span class="s2">&quot;collection&quot;</span>: null,
-        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>
+        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;DIG&quot;</span>
     <span class="o">}</span>,
     <span class="o">{</span>
         <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;/print/small/L12345.jpg&quot;</span>
         <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;approved&quot;</span>,
-        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;national&quot;</span>,
+        <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+        <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;NAT&quot;</span>,
         <span class="s2">&quot;collection&quot;</span>: <span class="m">2</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;digital&quot;</span>
+        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;DIG&quot;</span>
     <span class="o">}</span>
     ...
 <span class="o">]</span>
@@ -1586,19 +1781,23 @@
 <td><p>integer</p></td>
 <td><p>false</p></td>
 </tr>
-<tr class="row-odd"><td><p>clerk</p></td>
+<tr class="row-odd"><td><p>seller</p></td>
 <td><p>User</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>client</p></td>
+<td><p>Client</p></td>
 <td><p>true</p></td>
 </tr>
-<tr class="row-even"><td><p>print</p></td>
+<tr class="row-odd"><td><p>print</p></td>
 <td><p>Print</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 </tr>
-<tr class="row-odd"><td><p>date_request *</p></td>
+<tr class="row-even"><td><p>date_request *</p></td>
 <td><p>datetime</p></td>
 <td><p>false</p></td>
 </tr>
-<tr class="row-even"><td><p>date_end</p></td>
+<tr class="row-odd"><td><p>date_end</p></td>
 <td><p>datetime</p></td>
 <td><p>true</p></td>
 </tr>
