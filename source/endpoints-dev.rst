@@ -1,3 +1,28 @@
+EndPoints
+------------------------
+
+All the endpoints are with pagination in this format:
+
+.. code-block:: bash
+
+    {
+        "count": 584,
+        "next": "https://la-estampa.herokuapp.com/api/print/?page=4",
+        "previous": "https://la-estampa.herokuapp.com/api/print/?page=2",
+        "results": [
+           …
+        ]
+    }
+
+The limit per page are 100 elements.
+
+- `More about pagination`_
+
+.. _`More about pagination`: https://www.django-rest-framework.org/api-guide/pagination/
+
+
+------------------------
+
 Authenticating Requests
 -----------------------
 
@@ -122,7 +147,7 @@ Briefing
 GET
 ===
 
-If you want to get all briefing, use:
+If you want to get briefing, use:
 
 .. code-block:: bash
 
@@ -170,7 +195,7 @@ But if you prefer to take one briefing. Replace the <id> for the value that you 
 POST
 ====
 
-You need to do post request with the briefing name in the body to create a new briefing.
+You need to do post request with the briefing name in the body to create a new.
 
 .. code-block:: bash
 
@@ -288,7 +313,7 @@ The category is a way to filter and sort the `Tag`_.
 GET
 ===
 
-If you want to get all categories, use:
+If you want to get category, use:
 
 .. code-block:: bash
 
@@ -329,7 +354,7 @@ But if you prefer to take one category. Replace the <id> for the value that you 
 POST
 ====
 
-You need to do post request with the category name in the body to create a new category.
+You need to do post request with the category name in the body to create a new.
 
 .. code-block:: bash
 
@@ -412,10 +437,10 @@ P.S: The response will contains the new values.
 
 ------------------------
 
-Collection
+Client
 ------------------------
 
-The collection is a `Print`_ group, with the name suggests is a `Print`_ collection.
+The client is a the Print_ owner.
 
 .. list-table:: **Attributes**
    :widths: 15 15 15
@@ -430,35 +455,207 @@ The collection is a `Print`_ group, with the name suggests is a `Print`_ collect
      - false
 
    * - name
+     - string
+     - true
+
+   * - COD_CLIENTE
+     - string
+     - false
+
+
+GET
+===
+
+If you want to get client, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/client/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "name": "Ana",
+            "COD_CLIENTE": null
+        },
+        {
+            "id": 2,
+            "name": "Carolina",
+            "COD_CLIENTE": 12345
+        },
+        ...
+    ]
+
+But if you prefer to take one client. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/client/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Ana",
+        "COD_CLIENTE": null
+    }
+
+
+POST
+====
+
+You need to do post request with the client name in the body to create a new.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/client/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name": "Ana",
+        "COD_CLIENTE": null
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Ana",
+        "COD_CLIENTE": null
+    }
+
+
+PUT
+===
+
+Choose the client that you want to update and replace the <id> to client ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/client/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name": "Ana",
+        "COD_CLIENTE": 23456
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Ana",
+        "COD_CLIENTE": 23456
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the client that you want to partial update and replace the <id> to client ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/client/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "COD_CLIENTE": 23456
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Ana",
+        "COD_CLIENTE": 23456
+    }
+
+P.S: The response will contains the new values.
+
+
+------------------------
+
+Collection
+------------------------
+
+The collection is a `Print`_ group, with the name suggests is a `Print`_ collection.
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+     - choices
+
+   * - id
+     - integer
+     - false
+     -
+
+   * - name
      - integer
      - true
+     -
 
    * - date_creation *
      - datetime
      - false
+     -
 
    * - date_update *
      - datetime
      - false
+     -
 
    * - type
-     - arrayfield of string
+     - string
+     -
      - COL, ID
 
    * - briefing
      - string
      - false
+     -
 
    * - ps
      - string
      - false
+     -
 
 P.S.: The date_creation and date_update are not required because the value default is the current time.
 
 GET
 ===
 
-If you want to get all collections, use:
+If you want to get collections, use:
 
 .. code-block:: bash
 
@@ -474,7 +671,7 @@ If you want to get all collections, use:
             "name": "verão 2019",
             "date_creation": "2018-11-21T12:21:43.862687Z",
             "date_update": "2018-12-20T15:50:25.843449Z",
-            "type": ['COL'],
+            "type": 'COL',
             "briefing": "The best briefing ever",
             "ps": ""
         },
@@ -483,7 +680,7 @@ If you want to get all collections, use:
             "name": "inverno 2019",
             "date_creation": "2018-12-21T12:45:12.232511Z",
             "date_update": "2019-04-01T15:12:53.453569Z",
-            "type": ['id'],
+            "type": 'ID',
             "briefing": "The second best briefing ever",
             "ps": ""
         }
@@ -506,7 +703,7 @@ And you can order the Collection by **ascending** and **descending** with the qu
             "name": "verão 2020",
             "date_creation": "2019-12-20T21:35:32.847649Z",
             "date_update": "2019-12-20T20:51:50.843449Z",
-            "type": ['COL'],
+            "type": 'COL',
             "briefing": "The one hundred and forty-fifth best briefing ever",
             "ps": ""
         },
@@ -515,7 +712,7 @@ And you can order the Collection by **ascending** and **descending** with the qu
             "name": "inverno 2020",
             "date_creation": "2019-11-21T19:43:21.862687Z",
             "date_update": null,
-            "type": ['COL'],
+            "type": 'COL',
             "briefing": "The hundred and forty-fourth best briefing ever",
             "ps": ""
         }
@@ -539,7 +736,7 @@ But if you prefer to take one category. Replace the <id> for the value that you 
         "name": "verão 2019",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
-        "type": ['COL'],
+        "type": 'COL',
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -548,7 +745,7 @@ But if you prefer to take one category. Replace the <id> for the value that you 
 POST
 ====
 
-You need to do post request with the collection attributes in the body to create a new collection.
+You need to do post request with the collection attributes in the body to create a new.
 
 .. code-block:: bash
 
@@ -561,7 +758,7 @@ body:
     {
         "name": "verão 2019",
         "date_update": "2018-12-20T15:50:25.843449Z",
-        "type": ['COL'],
+        "type": 'COL',
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -576,7 +773,7 @@ body:
         "name": "verão 2019",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2018-12-20T15:50:25.843449Z",
-        "type": ['COL'],
+        "type": 'COL',
         "briefing": "The best briefing ever",
         "ps": ""
     }
@@ -599,7 +796,7 @@ body:
         "name": "verão 2020",
         "date_update": "2019-12-20T20:51:50.843449Z",
         "briefing": "Now this the best briefing ever",
-        "type": ['COL'],
+        "type": 'COL',
         "ps": ""
     }
 
@@ -613,7 +810,7 @@ body:
         "name": "verão 2020",
         "date_creation": "2019-11-21T19:43:21.862687Z",
         "date_update": "2019-12-20T21:23:12.783479Z",
-        "type": ['COL'],
+        "type": 'COL',
         "briefing": "Now this the best briefing ever",
         "ps": ""
     }
@@ -646,226 +843,9 @@ body:
         "name": "outono 2020",
         "date_creation": "2018-11-21T12:21:43.862687Z",
         "date_update": "2019-12-20T21:23:12.783479Z",
-        "type": ['COL'],
+        "type": 'COL',
         "briefing": "The best briefing ever",
         "ps": ""
-    }
-
-P.S: The response will contains the new values.
-
-
-------------------------
-
-Color
-------------------------
-
-.. list-table:: **Attributes**
-   :widths: 15 15 15 15
-   :header-rows: 1
-
-   * - field
-     - type
-     - required
-     - extension
-
-   * - id
-     - integer
-     - false
-     -
-
-   * - print
-     - Print
-     - false
-     -
-
-   * - feedback
-     - Feedback
-     - false
-     -
-
-   * - image
-     - file
-     - false
-     - jpeg
-
-   * - psd_original
-     - file
-     - false
-     - psd
-
-   * - psd_final
-     - file
-     - false
-     - psd
-
-   * - psd_flirted
-     - file
-     - false
-     - psd
-
-
-
-GET
-===
-
-If you want to get all colors, use:
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/
-
-**Response:**
-
-.. code-block:: bash
-
-    [
-        {
-            "id" : 1,
-            "image": "color/small/1.jpg"
-            "psd_original": null,
-            "psd_final": null,
-            "psd_flirted": null,
-            "feedback": 4,
-            "print": 1,
-        },
-        {
-            "id" : 2,
-            "image": "color/small/2.jpg"
-            "psd_original": color/psd/original/2.psd,
-            "psd_final": null,
-            "psd_flirted": null,
-            "feedback": 4,
-            "print": 2,
-        }
-        ...
-    ]
-
-But if you prefer to take one color. Replace the <id> for the value that you want.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-        "id" : 1,
-        "image": "color/small/1.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
-    }
-
-POST
-====
-
-You need to do post request with the color attributes in the body to create a new color.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/
-
-body:
-
-.. code-block:: bash
-
-    {
-        "image": "color/small/1.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
-    }
-
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-        "id" : 1,
-        "image": "color/small/1.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
-    }
-
-PUT
-===
-
-Choose the color that you want to update and replace the <id> to color ID and add all the attributes in the body.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-body:
-
-.. code-block:: bash
-
-    {
-        "image": "color/small/3.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
-    }
-
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-        "id" : 1,
-        "image": "color/small/3.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
-    }
-
-P.S: The response will contains the new values.
-
-
-PATCH
-=====
-
-Choose the color that you want to partial update and replace the <id> to color ID and add all the attributes in the body.
-
-.. code-block:: bash
-
-    https://la-estampa.herokuapp.com/api/color/<id>/
-
-body:
-
-.. code-block:: bash
-
-    {
-        "image": "color/small/3.jpg"
-    }
-
-**Response:**
-
-.. code-block:: bash
-
-    {
-        "id" : 1,
-        "image": "color/small/3.jpg"
-        "psd_original": null,
-        "psd_final": null,
-        "psd_flirted": null,
-        "feedback": 4,
-        "print": 1,
     }
 
 P.S: The response will contains the new values.
@@ -915,7 +895,7 @@ P.S.: The date is not required because the value default is the current time.
 GET
 ===
 
-If you want to get all feedbacks, use:
+If you want to get feedback, use:
 
 .. code-block:: bash
 
@@ -1000,7 +980,7 @@ But if you prefer to take one feedback. Replace the <id> for the value that you 
 POST
 ====
 
-You need to do post request with the feedback attributes in the body to create a new collection.
+You need to do post request with the feedback attributes in the body to create a new.
 
 .. code-block:: bash
 
@@ -1104,6 +1084,203 @@ P.S: The response will contains the new values.
 
 ------------------------
 
+Notification
+------------------------
+
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+
+   * - id
+     - integer
+     - false
+
+   * - sender
+     - User
+     - true
+
+   * - receiver
+     - User
+     - true
+
+   * - date *
+     - datetime
+     - false
+
+   * - viewed
+     - boolean
+     - false
+
+   * - message
+     - string
+     - true
+
+P.S.: The date is not required because the value default is the current time.
+
+
+GET
+===
+
+If you want to get notification, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/notification/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "date": "2020-01-28T16:18:26.186210Z",
+            "viewed": false,
+            "message": "Hi",
+            "sender": 1,
+            "receiver": 7
+        },
+        {
+            "id": 2,
+            "date": "2020-01-28T16:19:53.153214Z",
+            "viewed": false,
+            "message": "Hello",
+            "sender": 7,
+            "receiver": 1
+        },
+        ...
+    ]
+
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/notification/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "date": "2020-01-28T16:18:26.186210Z",
+        "viewed": false,
+        "message": "Hi",
+        "sender": 1,
+        "receiver": 7
+    }
+
+
+POST
+====
+
+You need to do post request with the notification attributes in the body to create a new.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/notification/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "viewed": false,
+        "message": "Hi",
+        "sender": 1,
+        "receiver": 7
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "date": "2020-01-28T16:18:26.186210Z",
+        "viewed": false,
+        "message": "Hi",
+        "sender": 1,
+        "receiver": 7
+    }
+
+
+PUT
+===
+
+Choose the notification that you want to update and replace the <id> to notification ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/notification/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "viewed": true,
+        "message": "Hello",
+        "sender": 1,
+        "receiver": 7
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "date": "2020-01-28T16:18:26.186210Z",
+        "viewed": true,
+        "message": "Hello",
+        "sender": 1,
+        "receiver": 7
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the notification that you want to partial update and replace the <id> to notification ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/notification/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "message": "Hello",
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "date": "2020-01-28T16:18:26.186210Z",
+        "viewed": true,
+        "message": "Hello",
+        "sender": 1,
+        "receiver": 7
+    }
+
+P.S: The response will contains the new values.
+
+
+------------------------
+
 Print
 ------------------------
 
@@ -1151,19 +1328,19 @@ The print is the main model. It have `home`_ endpoint that is your light version
 
    * - code
      - string
-     - true
+     - false
      -
      -
 
    * - status
      - string
-     - true
+     - false
      -
      - APP, REV, DEN, SKE
 
    * - type
      - string
-     - true
+     - false
      -
      - DIG, CYL, BOTH
 
@@ -1222,6 +1399,24 @@ The print is the main model. It have `home`_ endpoint that is your light version
      -
      -
 
+   * - origin
+     - Print
+     - false
+     -
+     -
+
+   * - is_origin
+     - boolean
+     - false
+     -
+     -
+
+   * - is_twin
+     - boolean
+     - false
+     -
+     -
+
    * - dpi
      - float
      - false
@@ -1264,12 +1459,12 @@ The print is the main model. It have `home`_ endpoint that is your light version
      -
      -
 
-P.S.: The date_request and date_update and  are not required because the value default is the current time.
+P.S.: The date_request and date_update are not required because the value default is the current time.
 
 GET
 ===
 
-If you want to get all print, use:
+If you want to get print, use:
 
 .. code-block:: bash
 
@@ -1280,7 +1475,7 @@ If you want to get all print, use:
 .. code-block:: bash
 
     [
-     {
+        {
             "id": 1,
             "tagprint_set": [
                 {
@@ -1306,6 +1501,8 @@ If you want to get all print, use:
             "date_update": "2019-10-01T00:00:00Z",
             "date_approved": "2019-11-19T00:00:00Z",
             "date_expiration": null,
+            "is_origin": true,
+            "is_twin": false,
             "dpi": null,
             "image": "print/small/L12345.jpg"
             "psd_original": "print/psd/original/L12345.psd",
@@ -1316,7 +1513,8 @@ If you want to get all print, use:
             "owner": null,
             "designer": 7,
             "coordinator": 6,
-            "collection": null
+            "collection": null,
+            "origin": null
         },
         {
             "id": 2,
@@ -1342,6 +1540,8 @@ If you want to get all print, use:
             "date_update": "2019-10-01T00:00:00Z",
             "date_approved": "2019-10-01T00:00:00Z",
             "date_expiration": null,
+            "is_origin": true,
+            "is_twin": false,
             "dpi": null,
             "image": null,
             "psd_original": null,
@@ -1352,7 +1552,8 @@ If you want to get all print, use:
             "owner": null,
             "designer": 7,
             "coordinator": 7,
-            "collection": null
+            "collection": null,
+            "origin": null
         },
         ...
     ]
@@ -1367,50 +1568,53 @@ But if you prefer to take one reserve. Replace the <id> for the value that you w
 
 .. code-block:: bash
 
-     {
-            "id": 1,
-            "tagprint_set": [
-                {
-                    "tag": {
-                        "id": 1,
-                        "name": "aquarela",
-                        "category": 1
-                    }
+    {
+        "id": 1,
+        "tagprint_set": [
+            {
+                "tag": {
+                    "id": 1,
+                    "name": "aquarela",
+                    "category": 1
                 }
-            ],
-            "briefing_set": [],
-            "code": "L12345",
-            "status": "APP",
-            "type": null,
-            "exclusivity": "REG",
-            "exclusivity_int": [],
-            "exclusivity_reg": [
-                "SP"
-            ],
-            "exclusivity_other": null,
-            "expire": false,
-            "date_creation": "2019-10-01T00:00:00Z",
-            "date_update": "2019-10-01T00:00:00Z",
-            "date_approved": "2019-11-19T00:00:00Z",
-            "date_expiration": null,
-            "dpi": null,
-            "image": "print/small/L12345.jpg"
-            "psd_original": "print/psd/original/L12345.psd",
-            "psd_final": null,
-            "psd_flirted": null,
-            "rapport": "",
-            "rapport_direction": false,
-            "owner": null,
-            "designer": 7,
-            "coordinator": 6,
-            "collection": null
-        }
+            }
+        ],
+        "briefing_set": [],
+        "code": "L12345",
+        "status": "APP",
+        "type": null,
+        "exclusivity": "REG",
+        "exclusivity_int": [],
+        "exclusivity_reg": [
+            "SP"
+        ],
+        "exclusivity_other": null,
+        "expire": false,
+        "date_creation": "2019-10-01T00:00:00Z",
+        "date_update": "2019-10-01T00:00:00Z",
+        "date_approved": "2019-11-19T00:00:00Z",
+        "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
+        "dpi": null,
+        "image": "print/small/L12345.jpg"
+        "psd_original": "print/psd/original/L12345.psd",
+        "psd_final": null,
+        "psd_flirted": null,
+        "rapport": "",
+        "rapport_direction": false,
+        "owner": null,
+        "designer": 7,
+        "coordinator": 6,
+        "collection": null,
+        "origin": null
+    }
 
 
 POST
 ====
 
-You need to do post request with the print attributes in the body to create a new print.
+You need to do post request with the print attributes in the body to create a new.
 
 .. code-block:: bash
 
@@ -1445,6 +1649,8 @@ body:
         "date_update": "2019-10-01T00:00:00Z",
         "date_approved": "2019-11-19T00:00:00Z",
         "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
         "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
@@ -1455,7 +1661,8 @@ body:
         "owner": null,
         "designer": 7,
         "coordinator": 6,
-        "collection": null
+        "collection": null,
+        "origin": null
      },
 
 
@@ -1489,6 +1696,8 @@ body:
         "date_update": "2019-10-01T00:00:00Z",
         "date_approved": "2019-11-19T00:00:00Z",
         "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
         "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
@@ -1499,7 +1708,8 @@ body:
         "owner": null,
         "designer": 7,
         "coordinator": 6,
-        "collection": null
+        "collection": null,
+        "origin": null
      },
 
 
@@ -1548,6 +1758,8 @@ body:
         "date_update": "2019-10-01T00:00:00Z",
         "date_approved": "2019-11-19T00:00:00Z",
         "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
         "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
@@ -1558,7 +1770,8 @@ body:
         "owner": null,
         "designer": 7,
         "coordinator": 6,
-        "collection": null
+        "collection": null,
+        "origin": null
      },
 
 
@@ -1601,6 +1814,8 @@ body:
         "date_update": "2019-10-01T00:00:00Z",
         "date_approved": "2019-11-19T00:00:00Z",
         "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
         "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
@@ -1611,7 +1826,8 @@ body:
         "owner": null,
         "designer": 7,
         "coordinator": 6,
-        "collection": null
+        "collection": null,
+        "origin": null
      },
 
 P.S: The response will contains the new values.
@@ -1666,6 +1882,8 @@ body:
         "date_update": "2019-10-01T00:00:00Z",
         "date_approved": "2019-11-19T00:00:00Z",
         "date_expiration": null,
+        "is_origin": true,
+        "is_twin": false,
         "dpi": null,
         "image": "print/small/L12345.jpg"
         "psd_original": "print/psd/original/L12345.psd",
@@ -1676,7 +1894,8 @@ body:
         "owner": null,
         "designer": 7,
         "coordinator": 6,
-        "collection": null
+        "collection": null,
+        "origin": null
      },
 
 P.S: The response will contains the new values.
@@ -1742,7 +1961,7 @@ The print reserve.
 
    * - client
      - Client
-     - true
+     - false
 
    * - print
      - Print
@@ -1762,7 +1981,7 @@ P.S.: The date_request is not required because the value default is the current 
 GET
 ===
 
-If you want to get all reserve, use:
+If you want to get reserve, use:
 
 .. code-block:: bash
 
@@ -1811,7 +2030,7 @@ But if you prefer to take one reserve. Replace the <id> for the value that you w
 POST
 ====
 
-You need to do post request with the reserve attributes in the body to create a new reserve.
+You need to do post request with the reserve attributes in the body to create a new.
 
 .. code-block:: bash
 
@@ -1939,7 +2158,7 @@ The tag is a representation of contents inside of a print.
 GET
 ===
 
-If you want to get all tags, use:
+If you want to get tags, use:
 
 .. code-block:: bash
 
@@ -2009,7 +2228,7 @@ But if you prefer to take one feedback. Replace the <id> for the value that you 
 POST
 ====
 
-You need to do post request with the tag attributes in the body to create a new tag.
+You need to do post request with the tag attributes in the body to create a new.
 
 .. code-block:: bash
 
@@ -2069,7 +2288,6 @@ body:
 P.S: The response will contains the new values.
 
 
-
 PATCH
 =====
 
@@ -2100,5 +2318,212 @@ body:
 P.S: The response will contains the new values.
 
 ------------------------
+
+User
+------------------------
+
+The User is who have permission to see the content of La Estampa.
+
+.. list-table:: **Attributes**
+   :widths: 15 15 15
+   :header-rows: 1
+
+   * - field
+     - type
+     - required
+
+   * - id
+     - integer
+     - false
+
+   * - name
+     - string
+     - true
+
+   * - email
+     - string
+     - true
+
+   * - role
+     - ArrayField of string
+     - false
+
+   * - password *
+     - string
+     - true
+
+P.S.: The password is only writeable
+
+
+GET
+===
+
+If you want to get user, use:
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/user/
+
+**Response:**
+
+.. code-block:: bash
+
+    [
+        {
+            "id": 1,
+            "name": "Fernando",
+            "email": "fernando@laestampa.com.br",
+            "role": [
+                "designer",
+                "coordinator"
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Jessica",
+            "email": "jessica@laestampa.com.br",
+            "role": [
+                "designer"
+            ]
+        }
+        ...
+    ]
+
+
+But if you prefer to take one user. Replace the <id> for the value that you want.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/user/<id>/
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "designer",
+            "coordinator"
+        ]
+    }
+
+
+POST
+====
+
+You need to do post request with the user attributes in the body to create a new.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/user/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "designer",
+            "coordinator"
+        ]
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+
+    {
+        "id": 1,
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "designer",
+            "coordinator"
+        ]
+    }
+
+
+PUT
+===
+
+Choose the user that you want to update and replace the <id> to user ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/user/<id>/
+
+body:
+
+.. code-block:: bash
+
+
+    {
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "designer"
+        ]
+    }
+
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "designer"
+        ]
+    }
+
+P.S: The response will contains the new values.
+
+
+PATCH
+=====
+
+Choose the user that you want to partial update and replace the <id> to user ID and add all the attributes in the body.
+
+.. code-block:: bash
+
+    https://la-estampa.herokuapp.com/api/user/<id>/
+
+body:
+
+.. code-block:: bash
+
+    {
+        "role": [
+            "coordinator"
+        ]
+    }
+
+**Response:**
+
+.. code-block:: bash
+
+    {
+        "id": 1,
+        "name": "Fernando",
+        "email": "fernando@laestampa.com.br",
+        "role": [
+            "coordinator"
+        ]
+    }
+
+P.S: The response will contains the new values.
+
+------------------------
+
 
 

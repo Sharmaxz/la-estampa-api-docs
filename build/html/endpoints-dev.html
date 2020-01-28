@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Authenticating Requests &mdash; La Estampa 0.1 documentation</title>
+  <title>EndPoints &mdash; La Estampa 0.1 documentation</title>
   
 
   
@@ -90,7 +90,8 @@
 <li class="toctree-l2"><a class="reference internal" href="la-estampa.html#environment-variables">Environment Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="la-estampa.html#run">Run</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="la-estampa.html#endpoints">EndPoints</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Authenticating Requests</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EndPoints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#authenticating-requests">Authenticating Requests</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#requesting-the-bearer-token">Requesting the bearer token</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#refreshing-token">Refreshing token</a></li>
 </ul>
@@ -109,14 +110,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#id8">PATCH</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection">Collection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client">Client</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id9">GET</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id10">POST</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id11">PUT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id12">PATCH</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#color">Color</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collection">Collection</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id13">GET</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id14">POST</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id15">PUT</a></li>
@@ -130,26 +131,40 @@
 <li class="toctree-l4"><a class="reference internal" href="#id20">PATCH</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#print">Print</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notification">Notification</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id21">GET</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id22">POST</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id23">PUT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id24">PATCH</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#print">Print</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id25">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id26">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id27">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">PATCH</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#home">HOME</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#reserve">Reserve</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id26">GET</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id27">POST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id28">PUT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id29">PATCH</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#tag">Tag</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id30">GET</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id31">POST</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id32">PUT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id33">PATCH</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tag">Tag</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id34">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id35">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id36">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">PATCH</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#user">User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id38">GET</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id39">POST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">PUT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id41">PATCH</a></li>
 </ul>
 </li>
 </ul>
@@ -203,7 +218,7 @@
         
           <li><a href="la-estampa.html">La Estampa API</a> &raquo;</li>
         
-      <li>Authenticating Requests</li>
+      <li>EndPoints</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -222,13 +237,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="authenticating-requests">
+  <div class="section" id="endpoints">
+<h1>EndPoints<a class="headerlink" href="#endpoints" title="Permalink to this headline">¶</a></h1>
+<p>All the endpoints are with pagination in this format:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;count&quot;</span>: <span class="m">584</span>,
+    <span class="s2">&quot;next&quot;</span>: <span class="s2">&quot;https://la-estampa.herokuapp.com/api/print/?page=4&quot;</span>,
+    <span class="s2">&quot;previous&quot;</span>: <span class="s2">&quot;https://la-estampa.herokuapp.com/api/print/?page=2&quot;</span>,
+    <span class="s2">&quot;results&quot;</span>: <span class="o">[</span>
+       …
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>The limit per page are 100 elements.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.django-rest-framework.org/api-guide/pagination/">More about pagination</a></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="authenticating-requests">
 <h1>Authenticating Requests<a class="headerlink" href="#authenticating-requests" title="Permalink to this headline">¶</a></h1>
 <p>You need to authenticate to have permission to access endpoints.</p>
 <div class="section" id="requesting-the-bearer-token">
 <h2>Requesting the bearer token<a class="headerlink" href="#requesting-the-bearer-token" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id34">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id34" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id42">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -256,11 +290,11 @@
 </div>
 <p><a href="#id1"><span class="problematic" id="id2">**</span></a>Response</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;access_token&quot;</span>: <span class="s2">&quot;AvjYU4gkGAHPfkod66XnKNyxGNvmE0&quot;</span>,
+    <span class="s2">&quot;access_token&quot;</span>: <span class="s2">&quot;&lt;your_access_token&gt;&quot;</span>,
     <span class="s2">&quot;expires_in&quot;</span>: <span class="m">172800</span>,
     <span class="s2">&quot;token_type&quot;</span>: <span class="s2">&quot;Bearer&quot;</span>,
     <span class="s2">&quot;scope&quot;</span>: <span class="s2">&quot;read write&quot;</span>,
-    <span class="s2">&quot;refresh_token&quot;</span>: <span class="s2">&quot;1qGSwwkU2TggY7LAQL6jIMcyTBcYGf&quot;</span>
+    <span class="s2">&quot;refresh_token&quot;</span>: <span class="s2">&quot;&lt;your_refresh_token&gt;&quot;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -268,8 +302,8 @@
 </div>
 <div class="section" id="refreshing-token">
 <h2>Refreshing token<a class="headerlink" href="#refreshing-token" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default" id="id35">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id35" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id43">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -307,8 +341,8 @@
 <hr class="docutils" />
 <div class="section" id="briefing">
 <h1>Briefing<a class="headerlink" href="#briefing" title="Permalink to this headline">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id36">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id36" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id44">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -347,7 +381,7 @@
 </table>
 <div class="section" id="get">
 <h2>GET<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all briefing, use:</p>
+<p>If you want to get briefing, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/briefing/
 </pre></div>
 </div>
@@ -386,7 +420,7 @@
 </div>
 <div class="section" id="post">
 <h2>POST<a class="headerlink" href="#post" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the briefing name in the body to create a new briefing.</p>
+<p>You need to do post request with the briefing name in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/briefing/
 </pre></div>
 </div>
@@ -461,8 +495,8 @@
 <div class="section" id="category">
 <h1>Category<a class="headerlink" href="#category" title="Permalink to this headline">¶</a></h1>
 <p>The category is a way to filter and sort the <a class="reference internal" href="#tag">Tag</a>.</p>
-<table class="colwidths-given docutils align-default" id="id37">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id37" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id45">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -487,7 +521,7 @@
 </table>
 <div class="section" id="id5">
 <h2>GET<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all categories, use:</p>
+<p>If you want to get category, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/category/
 </pre></div>
 </div>
@@ -519,7 +553,7 @@
 </div>
 <div class="section" id="id6">
 <h2>POST<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the category name in the body to create a new category.</p>
+<p>You need to do post request with the category name in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/category/
 </pre></div>
 </div>
@@ -581,11 +615,11 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="collection">
-<h1>Collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h1>
-<p>The collection is a <a class="reference internal" href="#print">Print</a> group, with the name suggests is a <a class="reference internal" href="#print">Print</a> collection.</p>
-<table class="colwidths-given docutils align-default" id="id38">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id38" title="Permalink to this table">¶</a></caption>
+<div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<p>The client is a the <a class="reference internal" href="#print">Print</a> owner.</p>
+<table class="colwidths-given docutils align-default" id="id46">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -603,35 +637,126 @@
 <td><p>false</p></td>
 </tr>
 <tr class="row-odd"><td><p>name</p></td>
-<td><p>integer</p></td>
+<td><p>string</p></td>
 <td><p>true</p></td>
 </tr>
-<tr class="row-even"><td><p>date_creation *</p></td>
-<td><p>datetime</p></td>
-<td><p>false</p></td>
-</tr>
-<tr class="row-odd"><td><p>date_update *</p></td>
-<td><p>datetime</p></td>
-<td><p>false</p></td>
-</tr>
-<tr class="row-even"><td><p>type</p></td>
-<td><p>arrayfield of string</p></td>
-<td><p>COL, ID</p></td>
-</tr>
-<tr class="row-odd"><td><p>briefing</p></td>
-<td><p>string</p></td>
-<td><p>false</p></td>
-</tr>
-<tr class="row-even"><td><p>ps</p></td>
+<tr class="row-even"><td><p>COD_CLIENTE</p></td>
 <td><p>string</p></td>
 <td><p>false</p></td>
 </tr>
 </tbody>
 </table>
-<p>P.S.: The date_creation and date_update are not required because the value default is the current time.</p>
 <div class="section" id="id9">
 <h2>GET<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all collections, use:</p>
+<p>If you want to get client, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/client/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+        <span class="s2">&quot;COD_CLIENTE&quot;</span>: null
+    <span class="o">}</span>,
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
+        <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Carolina&quot;</span>,
+        <span class="s2">&quot;COD_CLIENTE&quot;</span>: <span class="m">12345</span>
+    <span class="o">}</span>,
+    ...
+<span class="o">]</span>
+</pre></div>
+</div>
+<p>But if you prefer to take one client. Replace the &lt;id&gt; for the value that you want.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/client/&lt;id&gt;/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: null
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>POST<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the client name in the body to create a new.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/client/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: null
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: null
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>PUT<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Choose the client that you want to update and replace the &lt;id&gt; to client ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/client/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: <span class="m">23456</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: <span class="m">23456</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+<div class="section" id="id12">
+<h2>PATCH<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p>Choose the client that you want to partial update and replace the &lt;id&gt; to client ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/client/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: <span class="m">23456</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Ana&quot;</span>,
+    <span class="s2">&quot;COD_CLIENTE&quot;</span>: <span class="m">23456</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="collection">
+<h1>Collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h1>
+<p>The collection is a <a class="reference internal" href="#print">Print</a> group, with the name suggests is a <a class="reference internal" href="#print">Print</a> collection.</p>
+<p>P.S.: The date_creation and date_update are not required because the value default is the current time.</p>
+<div class="section" id="id13">
+<h2>GET<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get collections, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/collection/
 </pre></div>
 </div>
@@ -642,7 +767,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>,
@@ -651,7 +776,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;inverno 2019&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-12-21T12:45:12.232511Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-04-01T15:12:53.453569Z&quot;</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;id&#39;</span><span class="o">]</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;ID&#39;</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The second best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>
@@ -670,7 +795,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-12-20T21:35:32.847649Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T20:51:50.843449Z&quot;</span>,
-        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The one hundred and forty-fifth best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>,
@@ -679,7 +804,7 @@
         <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;inverno 2020&quot;</span>,
         <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-11-21T19:43:21.862687Z&quot;</span>,
         <span class="s2">&quot;date_update&quot;</span>: null,
-        <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
         <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The hundred and forty-fourth best briefing ever&quot;</span>,
         <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
     <span class="o">}</span>
@@ -697,16 +822,16 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id10">
-<h2>POST<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the collection attributes in the body to create a new collection.</p>
+<div class="section" id="id14">
+<h2>POST<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the collection attributes in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/collection/
 </pre></div>
 </div>
@@ -714,7 +839,7 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -726,15 +851,15 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2019&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2018-12-20T15:50:25.843449Z&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id11">
-<h2>PUT<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h2>PUT<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
 <p>Choose the collection that you want to update and replace the &lt;id&gt; to collection ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/collection/&lt;id&gt;/
 </pre></div>
@@ -744,7 +869,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T20:51:50.843449Z&quot;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;Now this the best briefing ever&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
 </pre></div>
@@ -755,7 +880,7 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;verão 2020&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-11-21T19:43:21.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T21:23:12.783479Z&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;Now this the best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
 <span class="o">}</span>
@@ -763,8 +888,8 @@
 </div>
 <p>P.S: The response will contains the new values.</p>
 </div>
-<div class="section" id="id12">
-<h2>PATCH<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id16">
+<h2>PATCH<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
 <p>Choose the collection that you want to partial update and replace the &lt;id&gt; to collection ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/collection/&lt;id&gt;/
 </pre></div>
@@ -781,200 +906,9 @@
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;outono 2020&quot;</span>,
     <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2018-11-21T12:21:43.862687Z&quot;</span>,
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-12-20T21:23:12.783479Z&quot;</span>,
-    <span class="s2">&quot;type&quot;</span>: <span class="o">[</span><span class="s1">&#39;COL&#39;</span><span class="o">]</span>,
+    <span class="s2">&quot;type&quot;</span>: <span class="s1">&#39;COL&#39;</span>,
     <span class="s2">&quot;briefing&quot;</span>: <span class="s2">&quot;The best briefing ever&quot;</span>,
     <span class="s2">&quot;ps&quot;</span>: <span class="s2">&quot;&quot;</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>P.S: The response will contains the new values.</p>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="color">
-<h1>Color<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h1>
-<table class="colwidths-given docutils align-default" id="id39">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id39" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>field</p></th>
-<th class="head"><p>type</p></th>
-<th class="head"><p>required</p></th>
-<th class="head"><p>extension</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>id</p></td>
-<td><p>integer</p></td>
-<td><p>false</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>print</p></td>
-<td><p>Print</p></td>
-<td><p>false</p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p>feedback</p></td>
-<td><p>Feedback</p></td>
-<td><p>false</p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p>image</p></td>
-<td><p>file</p></td>
-<td><p>false</p></td>
-<td><p>jpeg</p></td>
-</tr>
-<tr class="row-even"><td><p>psd_original</p></td>
-<td><p>file</p></td>
-<td><p>false</p></td>
-<td><p>psd</p></td>
-</tr>
-<tr class="row-odd"><td><p>psd_final</p></td>
-<td><p>file</p></td>
-<td><p>false</p></td>
-<td><p>psd</p></td>
-</tr>
-<tr class="row-even"><td><p>psd_flirted</p></td>
-<td><p>file</p></td>
-<td><p>false</p></td>
-<td><p>psd</p></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="id13">
-<h2>GET<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all colors, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/color/
-</pre></div>
-</div>
-<p><strong>Response:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
-    <span class="o">{</span>
-        <span class="s2">&quot;id&quot;</span> : <span class="m">1</span>,
-        <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/1.jpg&quot;</span>
-        <span class="s2">&quot;psd_original&quot;</span>: null,
-        <span class="s2">&quot;psd_final&quot;</span>: null,
-        <span class="s2">&quot;psd_flirted&quot;</span>: null,
-        <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-        <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-    <span class="o">}</span>,
-    <span class="o">{</span>
-        <span class="s2">&quot;id&quot;</span> : <span class="m">2</span>,
-        <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/2.jpg&quot;</span>
-        <span class="s2">&quot;psd_original&quot;</span>: color/psd/original/2.psd,
-        <span class="s2">&quot;psd_final&quot;</span>: null,
-        <span class="s2">&quot;psd_flirted&quot;</span>: null,
-        <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-        <span class="s2">&quot;print&quot;</span>: <span class="m">2</span>,
-    <span class="o">}</span>
-    ...
-<span class="o">]</span>
-</pre></div>
-</div>
-<p>But if you prefer to take one color. Replace the &lt;id&gt; for the value that you want.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/color/&lt;id&gt;/
-</pre></div>
-</div>
-<p><strong>Response:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span> : <span class="m">1</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/1.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-<span class="o">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id14">
-<h2>POST<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the color attributes in the body to create a new color.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/color/
-</pre></div>
-</div>
-<p>body:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/1.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-<span class="o">}</span>
-</pre></div>
-</div>
-<p><strong>Response:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span> : <span class="m">1</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/1.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-<span class="o">}</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id15">
-<h2>PUT<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<p>Choose the color that you want to update and replace the &lt;id&gt; to color ID and add all the attributes in the body.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/color/&lt;id&gt;/
-</pre></div>
-</div>
-<p>body:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/3.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-<span class="o">}</span>
-</pre></div>
-</div>
-<p><strong>Response:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span> : <span class="m">1</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/3.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
-<span class="o">}</span>
-</pre></div>
-</div>
-<p>P.S: The response will contains the new values.</p>
-</div>
-<div class="section" id="id16">
-<h2>PATCH<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
-<p>Choose the color that you want to partial update and replace the &lt;id&gt; to color ID and add all the attributes in the body.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/color/&lt;id&gt;/
-</pre></div>
-</div>
-<p>body:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/3.jpg&quot;</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p><strong>Response:</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-    <span class="s2">&quot;id&quot;</span> : <span class="m">1</span>,
-    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;color/small/3.jpg&quot;</span>
-    <span class="s2">&quot;psd_original&quot;</span>: null,
-    <span class="s2">&quot;psd_final&quot;</span>: null,
-    <span class="s2">&quot;psd_flirted&quot;</span>: null,
-    <span class="s2">&quot;feedback&quot;</span>: <span class="m">4</span>,
-    <span class="s2">&quot;print&quot;</span>: <span class="m">1</span>,
 <span class="o">}</span>
 </pre></div>
 </div>
@@ -985,8 +919,8 @@
 <div class="section" id="feedback">
 <h1>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h1>
 <p>The feedback is a print commentary that will have the behavior of a chat on the front end.</p>
-<table class="colwidths-given docutils align-default" id="id40">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id40" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id47">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id47" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1028,7 +962,7 @@
 <p>P.S.: The date is not required because the value default is the current time.</p>
 <div class="section" id="id17">
 <h2>GET<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all feedbacks, use:</p>
+<p>If you want to get feedback, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/feedback/
 </pre></div>
 </div>
@@ -1098,7 +1032,7 @@
 </div>
 <div class="section" id="id18">
 <h2>POST<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the feedback attributes in the body to create a new collection.</p>
+<p>You need to do post request with the feedback attributes in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/feedback/
 </pre></div>
 </div>
@@ -1178,11 +1112,179 @@
 </div>
 </div>
 <hr class="docutils" />
+<div class="section" id="notification">
+<h1>Notification<a class="headerlink" href="#notification" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-given docutils align-default" id="id48">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id48" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>field</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>sender</p></td>
+<td><p>User</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>receiver</p></td>
+<td><p>User</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>date *</p></td>
+<td><p>datetime</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>viewed</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>message</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+<p>P.S.: The date is not required because the value default is the current time.</p>
+<div class="section" id="id21">
+<h2>GET<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get notification, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/notification/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:18:26.186210Z&quot;</span>,
+        <span class="s2">&quot;viewed&quot;</span>: false,
+        <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hi&quot;</span>,
+        <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
+        <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:19:53.153214Z&quot;</span>,
+        <span class="s2">&quot;viewed&quot;</span>: false,
+        <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello&quot;</span>,
+        <span class="s2">&quot;sender&quot;</span>: <span class="m">7</span>,
+        <span class="s2">&quot;receiver&quot;</span>: <span class="m">1</span>
+    <span class="o">}</span>,
+    ...
+<span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/notification/&lt;id&gt;/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:18:26.186210Z&quot;</span>,
+    <span class="s2">&quot;viewed&quot;</span>: false,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hi&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h2>POST<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the notification attributes in the body to create a new.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/notification/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;viewed&quot;</span>: false,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hi&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:18:26.186210Z&quot;</span>,
+    <span class="s2">&quot;viewed&quot;</span>: false,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hi&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h2>PUT<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<p>Choose the notification that you want to update and replace the &lt;id&gt; to notification ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/notification/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;viewed&quot;</span>: true,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:18:26.186210Z&quot;</span>,
+    <span class="s2">&quot;viewed&quot;</span>: true,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+<div class="section" id="id24">
+<h2>PATCH<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<p>Choose the notification that you want to partial update and replace the &lt;id&gt; to notification ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/notification/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello&quot;</span>,
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;date&quot;</span>: <span class="s2">&quot;2020-01-28T16:18:26.186210Z&quot;</span>,
+    <span class="s2">&quot;viewed&quot;</span>: true,
+    <span class="s2">&quot;message&quot;</span>: <span class="s2">&quot;Hello&quot;</span>,
+    <span class="s2">&quot;sender&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;receiver&quot;</span>: <span class="m">7</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="print">
 <h1>Print<a class="headerlink" href="#print" title="Permalink to this headline">¶</a></h1>
 <p>The print is the main model. It have <a class="reference internal" href="#home">home</a> endpoint that is your light version.</p>
-<table class="colwidths-given docutils align-default" id="id41">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id41" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id49">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id49" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -1231,19 +1333,19 @@
 </tr>
 <tr class="row-odd"><td><p>code</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>status</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
 <td><p>APP, REV, DEN, SKE</p></td>
 </tr>
 <tr class="row-odd"><td><p>type</p></td>
 <td><p>string</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 <td></td>
 <td><p>DIG, CYL, BOTH</p></td>
 </tr>
@@ -1301,43 +1403,61 @@
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>dpi</p></td>
+<tr class="row-odd"><td><p>origin</p></td>
+<td><p>Print</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>is_origin</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>is_twin</p></td>
+<td><p>boolean</p></td>
+<td><p>false</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>dpi</p></td>
 <td><p>float</p></td>
 <td><p>false</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>image</p></td>
+<tr class="row-odd"><td><p>image</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>jpeg</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>psd_original</p></td>
+<tr class="row-even"><td><p>psd_original</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>psd_final</p></td>
+<tr class="row-odd"><td><p>psd_final</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>psd_flirted</p></td>
+<tr class="row-even"><td><p>psd_flirted</p></td>
 <td><p>file</p></td>
 <td><p>false</p></td>
 <td><p>psd</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p>rapport</p></td>
+<tr class="row-odd"><td><p>rapport</p></td>
 <td><p>string</p></td>
 <td><p>false</p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p>rapport_direction</p></td>
+<tr class="row-even"><td><p>rapport_direction</p></td>
 <td><p>boolean</p></td>
 <td><p>false</p></td>
 <td></td>
@@ -1345,16 +1465,16 @@
 </tr>
 </tbody>
 </table>
-<p>P.S.: The date_request and date_update and  are not required because the value default is the current time.</p>
-<div class="section" id="id21">
-<h2>GET<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all print, use:</p>
+<p>P.S.: The date_request and date_update are not required because the value default is the current time.</p>
+<div class="section" id="id25">
+<h2>GET<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get print, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/print/
 </pre></div>
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
- <span class="o">{</span>
+    <span class="o">{</span>
         <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
         <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
             <span class="o">{</span>
@@ -1380,6 +1500,8 @@
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
         <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
         <span class="s2">&quot;date_expiration&quot;</span>: null,
+        <span class="s2">&quot;is_origin&quot;</span>: true,
+        <span class="s2">&quot;is_twin&quot;</span>: false,
         <span class="s2">&quot;dpi&quot;</span>: null,
         <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
         <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1390,7 +1512,8 @@
         <span class="s2">&quot;owner&quot;</span>: null,
         <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
         <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-        <span class="s2">&quot;collection&quot;</span>: null
+        <span class="s2">&quot;collection&quot;</span>: null,
+        <span class="s2">&quot;origin&quot;</span>: null
     <span class="o">}</span>,
     <span class="o">{</span>
         <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
@@ -1416,6 +1539,8 @@
         <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
         <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
         <span class="s2">&quot;date_expiration&quot;</span>: null,
+        <span class="s2">&quot;is_origin&quot;</span>: true,
+        <span class="s2">&quot;is_twin&quot;</span>: false,
         <span class="s2">&quot;dpi&quot;</span>: null,
         <span class="s2">&quot;image&quot;</span>: null,
         <span class="s2">&quot;psd_original&quot;</span>: null,
@@ -1426,7 +1551,8 @@
         <span class="s2">&quot;owner&quot;</span>: null,
         <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
         <span class="s2">&quot;coordinator&quot;</span>: <span class="m">7</span>,
-        <span class="s2">&quot;collection&quot;</span>: null
+        <span class="s2">&quot;collection&quot;</span>: null,
+        <span class="s2">&quot;origin&quot;</span>: null
     <span class="o">}</span>,
     ...
 <span class="o">]</span>
@@ -1438,49 +1564,52 @@
 </div>
 <p><strong>Response:</strong></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-       <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-       <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
-           <span class="o">{</span>
-               <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
-                   <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
-                   <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
-                   <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
-               <span class="o">}</span>
-           <span class="o">}</span>
-       <span class="o">]</span>,
-       <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
-       <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
-       <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
-       <span class="s2">&quot;type&quot;</span>: null,
-       <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
-       <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
-       <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
-           <span class="s2">&quot;SP&quot;</span>
-       <span class="o">]</span>,
-       <span class="s2">&quot;exclusivity_other&quot;</span>: null,
-       <span class="s2">&quot;expire&quot;</span>: false,
-       <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
-       <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
-       <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
-       <span class="s2">&quot;date_expiration&quot;</span>: null,
-       <span class="s2">&quot;dpi&quot;</span>: null,
-       <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
-       <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
-       <span class="s2">&quot;psd_final&quot;</span>: null,
-       <span class="s2">&quot;psd_flirted&quot;</span>: null,
-       <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
-       <span class="s2">&quot;rapport_direction&quot;</span>: false,
-       <span class="s2">&quot;owner&quot;</span>: null,
-       <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
-       <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-       <span class="s2">&quot;collection&quot;</span>: null
-   <span class="o">}</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;tagprint_set&quot;</span>: <span class="o">[</span>
+        <span class="o">{</span>
+            <span class="s2">&quot;tag&quot;</span>: <span class="o">{</span>
+                <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+                <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;aquarela&quot;</span>,
+                <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;briefing_set&quot;</span>: <span class="o">[]</span>,
+    <span class="s2">&quot;code&quot;</span>: <span class="s2">&quot;L12345&quot;</span>,
+    <span class="s2">&quot;status&quot;</span>: <span class="s2">&quot;APP&quot;</span>,
+    <span class="s2">&quot;type&quot;</span>: null,
+    <span class="s2">&quot;exclusivity&quot;</span>: <span class="s2">&quot;REG&quot;</span>,
+    <span class="s2">&quot;exclusivity_int&quot;</span>: <span class="o">[]</span>,
+    <span class="s2">&quot;exclusivity_reg&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;SP&quot;</span>
+    <span class="o">]</span>,
+    <span class="s2">&quot;exclusivity_other&quot;</span>: null,
+    <span class="s2">&quot;expire&quot;</span>: false,
+    <span class="s2">&quot;date_creation&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
+    <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;is_origin&quot;</span>: true,
+    <span class="s2">&quot;is_twin&quot;</span>: false,
+    <span class="s2">&quot;dpi&quot;</span>: null,
+    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
+    <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
+    <span class="s2">&quot;psd_final&quot;</span>: null,
+    <span class="s2">&quot;psd_flirted&quot;</span>: null,
+    <span class="s2">&quot;rapport&quot;</span>: <span class="s2">&quot;&quot;</span>,
+    <span class="s2">&quot;rapport_direction&quot;</span>: false,
+    <span class="s2">&quot;owner&quot;</span>: null,
+    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
+    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
+    <span class="s2">&quot;collection&quot;</span>: null,
+    <span class="s2">&quot;origin&quot;</span>: null
+<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id22">
-<h2>POST<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the print attributes in the body to create a new print.</p>
+<div class="section" id="id26">
+<h2>POST<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the print attributes in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/print/
 </pre></div>
 </div>
@@ -1510,6 +1639,8 @@
    <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
    <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
    <span class="s2">&quot;date_expiration&quot;</span>: null,
+   <span class="s2">&quot;is_origin&quot;</span>: true,
+   <span class="s2">&quot;is_twin&quot;</span>: false,
    <span class="s2">&quot;dpi&quot;</span>: null,
    <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
    <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1520,7 +1651,8 @@
    <span class="s2">&quot;owner&quot;</span>: null,
    <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
    <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-   <span class="s2">&quot;collection&quot;</span>: null
+   <span class="s2">&quot;collection&quot;</span>: null,
+   <span class="s2">&quot;origin&quot;</span>: null
 <span class="o">}</span>,
 </pre></div>
 </div>
@@ -1551,6 +1683,8 @@
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;is_origin&quot;</span>: true,
+    <span class="s2">&quot;is_twin&quot;</span>: false,
     <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1561,13 +1695,14 @@
     <span class="s2">&quot;owner&quot;</span>: null,
     <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
     <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-    <span class="s2">&quot;collection&quot;</span>: null
+    <span class="s2">&quot;collection&quot;</span>: null,
+    <span class="s2">&quot;origin&quot;</span>: null
  <span class="o">}</span>,
 </pre></div>
 </div>
 </div>
-<div class="section" id="id23">
-<h2>PUT<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id27">
+<h2>PUT<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
 <p>Choose the print that you want to update and replace the &lt;id&gt; to tag ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/print/&lt;id&gt;/
 </pre></div>
@@ -1605,6 +1740,8 @@
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;is_origin&quot;</span>: true,
+    <span class="s2">&quot;is_twin&quot;</span>: false,
     <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1615,7 +1752,8 @@
     <span class="s2">&quot;owner&quot;</span>: null,
     <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
     <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-    <span class="s2">&quot;collection&quot;</span>: null
+    <span class="s2">&quot;collection&quot;</span>: null,
+    <span class="s2">&quot;origin&quot;</span>: null
  <span class="o">}</span>,
 </pre></div>
 </div>
@@ -1653,6 +1791,8 @@
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;is_origin&quot;</span>: true,
+    <span class="s2">&quot;is_twin&quot;</span>: false,
     <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1663,14 +1803,15 @@
     <span class="s2">&quot;owner&quot;</span>: null,
     <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
     <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-    <span class="s2">&quot;collection&quot;</span>: null
+    <span class="s2">&quot;collection&quot;</span>: null,
+    <span class="s2">&quot;origin&quot;</span>: null
  <span class="o">}</span>,
 </pre></div>
 </div>
 <p>P.S: The response will contains the new values.</p>
 </div>
-<div class="section" id="id24">
-<h2>PATCH<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h2>PATCH<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
 <p>Choose the print that you want to partial update and replace the &lt;id&gt; to reserve ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/print/&lt;id&gt;/
 </pre></div>
@@ -1710,6 +1851,8 @@
     <span class="s2">&quot;date_update&quot;</span>: <span class="s2">&quot;2019-10-01T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_approved&quot;</span>: <span class="s2">&quot;2019-11-19T00:00:00Z&quot;</span>,
     <span class="s2">&quot;date_expiration&quot;</span>: null,
+    <span class="s2">&quot;is_origin&quot;</span>: true,
+    <span class="s2">&quot;is_twin&quot;</span>: false,
     <span class="s2">&quot;dpi&quot;</span>: null,
     <span class="s2">&quot;image&quot;</span>: <span class="s2">&quot;print/small/L12345.jpg&quot;</span>
     <span class="s2">&quot;psd_original&quot;</span>: <span class="s2">&quot;print/psd/original/L12345.psd&quot;</span>,
@@ -1720,7 +1863,8 @@
     <span class="s2">&quot;owner&quot;</span>: null,
     <span class="s2">&quot;designer&quot;</span>: <span class="m">7</span>,
     <span class="s2">&quot;coordinator&quot;</span>: <span class="m">6</span>,
-    <span class="s2">&quot;collection&quot;</span>: null
+    <span class="s2">&quot;collection&quot;</span>: null,
+    <span class="s2">&quot;origin&quot;</span>: null
  <span class="o">}</span>,
 </pre></div>
 </div>
@@ -1729,8 +1873,8 @@
 <div class="section" id="home">
 <h2>HOME<a class="headerlink" href="#home" title="Permalink to this headline">¶</a></h2>
 <p>The home endpoint is a light version of the print GET method and don’t accepted another method type.</p>
-<div class="section" id="id25">
-<h3>GET<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h3>GET<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/home/
 </pre></div>
 </div>
@@ -1763,8 +1907,8 @@
 <div class="section" id="reserve">
 <h1>Reserve<a class="headerlink" href="#reserve" title="Permalink to this headline">¶</a></h1>
 <p>The print reserve.</p>
-<table class="colwidths-given docutils align-default" id="id42">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id50">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id50" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1787,7 +1931,7 @@
 </tr>
 <tr class="row-even"><td><p>client</p></td>
 <td><p>Client</p></td>
-<td><p>true</p></td>
+<td><p>false</p></td>
 </tr>
 <tr class="row-odd"><td><p>print</p></td>
 <td><p>Print</p></td>
@@ -1804,9 +1948,9 @@
 </tbody>
 </table>
 <p>P.S.: The date_request is not required because the value default is the current time.</p>
-<div class="section" id="id26">
-<h2>GET<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all reserve, use:</p>
+<div class="section" id="id30">
+<h2>GET<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get reserve, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/reserve/
 </pre></div>
 </div>
@@ -1845,9 +1989,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id27">
-<h2>POST<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the reserve attributes in the body to create a new reserve.</p>
+<div class="section" id="id31">
+<h2>POST<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the reserve attributes in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/reserve/
 </pre></div>
 </div>
@@ -1870,8 +2014,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id28">
-<h2>PUT<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id32">
+<h2>PUT<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
 <p>Choose the reserve that you want to update and replace the &lt;id&gt; to tag ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/reserve/&lt;id&gt;/
 </pre></div>
@@ -1896,8 +2040,8 @@
 </div>
 <p>P.S: The response will contains the new values.</p>
 </div>
-<div class="section" id="id29">
-<h2>PATCH<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id33">
+<h2>PATCH<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
 <p>Choose the reserve that you want to partial update and replace the &lt;id&gt; to reserve ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/reserve/&lt;id&gt;/
 </pre></div>
@@ -1927,8 +2071,8 @@
 <div class="section" id="tag">
 <h1>Tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h1>
 <p>The tag is a representation of contents inside of a print.</p>
-<table class="colwidths-given docutils align-default" id="id43">
-<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id51">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id51" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1955,9 +2099,9 @@
 </tr>
 </tbody>
 </table>
-<div class="section" id="id30">
-<h2>GET<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h2>
-<p>If you want to get all tags, use:</p>
+<div class="section" id="id34">
+<h2>GET<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get tags, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/tag/
 </pre></div>
 </div>
@@ -2011,9 +2155,9 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id31">
-<h2>POST<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h2>
-<p>You need to do post request with the tag attributes in the body to create a new tag.</p>
+<div class="section" id="id35">
+<h2>POST<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the tag attributes in the body to create a new.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/tag/
 </pre></div>
 </div>
@@ -2033,8 +2177,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="id32">
-<h2>PUT<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id36">
+<h2>PUT<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h2>
 <p>Choose the tag that you want to update and replace the &lt;id&gt; to tag ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/tag/&lt;id&gt;/
 </pre></div>
@@ -2056,8 +2200,8 @@
 </div>
 <p>P.S: The response will contains the new values.</p>
 </div>
-<div class="section" id="id33">
-<h2>PATCH<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id37">
+<h2>PATCH<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h2>
 <p>Choose the tag that you want to partial update and replace the &lt;id&gt; to tag ID and add all the attributes in the body.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/tag/&lt;id&gt;/
 </pre></div>
@@ -2073,6 +2217,180 @@
     <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
     <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;abstrato&quot;</span>,
     <span class="s2">&quot;category&quot;</span>: <span class="m">1</span>,
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="user">
+<h1>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h1>
+<p>The User is who have permission to see the content of La Estampa.</p>
+<table class="colwidths-given docutils align-default" id="id52">
+<caption><span class="caption-text"><strong>Attributes</strong></span><a class="headerlink" href="#id52" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>field</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>required</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>name</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>email</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>role</p></td>
+<td><p>ArrayField of string</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>password *</p></td>
+<td><p>string</p></td>
+<td><p>true</p></td>
+</tr>
+</tbody>
+</table>
+<p>P.S.: The password is only writeable</p>
+<div class="section" id="id38">
+<h2>GET<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h2>
+<p>If you want to get user, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/user/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+        <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+        <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+        <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;designer&quot;</span>,
+            <span class="s2">&quot;coordinator&quot;</span>
+        <span class="o">]</span>
+    <span class="o">}</span>,
+    <span class="o">{</span>
+        <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
+        <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Jessica&quot;</span>,
+        <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;jessica@laestampa.com.br&quot;</span>,
+        <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+            <span class="s2">&quot;designer&quot;</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+    ...
+<span class="o">]</span>
+</pre></div>
+</div>
+<p>But if you prefer to take one user. Replace the &lt;id&gt; for the value that you want.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/user/&lt;id&gt;/
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;designer&quot;</span>,
+        <span class="s2">&quot;coordinator&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id39">
+<h2>POST<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h2>
+<p>You need to do post request with the user attributes in the body to create a new.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/user/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;designer&quot;</span>,
+        <span class="s2">&quot;coordinator&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;designer&quot;</span>,
+        <span class="s2">&quot;coordinator&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id40">
+<h2>PUT<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h2>
+<p>Choose the user that you want to update and replace the &lt;id&gt; to user ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/user/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;designer&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;designer&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>P.S: The response will contains the new values.</p>
+</div>
+<div class="section" id="id41">
+<h2>PATCH<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h2>
+<p>Choose the user that you want to partial update and replace the &lt;id&gt; to user ID and add all the attributes in the body.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://la-estampa.herokuapp.com/api/user/&lt;id&gt;/
+</pre></div>
+</div>
+<p>body:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;coordinator&quot;</span>
+    <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Response:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="s2">&quot;id&quot;</span>: <span class="m">1</span>,
+    <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Fernando&quot;</span>,
+    <span class="s2">&quot;email&quot;</span>: <span class="s2">&quot;fernando@laestampa.com.br&quot;</span>,
+    <span class="s2">&quot;role&quot;</span>: <span class="o">[</span>
+        <span class="s2">&quot;coordinator&quot;</span>
+    <span class="o">]</span>
 <span class="o">}</span>
 </pre></div>
 </div>

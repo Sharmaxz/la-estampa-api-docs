@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to La Estampa API's documentation!
-==================================
+==========================================
 
 .. toctree::
    :maxdepth: 1
